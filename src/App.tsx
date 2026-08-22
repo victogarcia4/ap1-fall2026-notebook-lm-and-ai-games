@@ -18,6 +18,7 @@ import {
   LOCAL_STORAGE_STUDENTS_KEY
 } from './data/initialAssignments';
 import { GraduationCap, ShieldCheck, Github, ExternalLink, CheckCircle2 } from 'lucide-react';
+import { DrGarciaAvatar } from './components/DrGarciaAvatar';
 
 export default function App() {
   // Main Tab State: 'slos' | 'notebooks' | 'aigame'
@@ -278,23 +279,7 @@ export default function App() {
       {/* Site Footer with Author Credits and Photo */}
       <footer className="max-w-7xl w-[calc(100%-2rem)] mx-auto mb-6 p-4 sm:p-6 bg-night text-paper rounded-2xl border border-white/10 shadow-xl flex flex-col md:flex-row items-center justify-between gap-5">
         <div className="flex items-center space-x-3.5">
-          <div className="relative shrink-0">
-            <img
-              src="/VHGM_traje_azul.png"
-              alt="Dr. Victor Garcia M"
-              className="w-13 h-13 rounded-full object-cover border-2 border-acid shadow-lg bg-night-2"
-              onError={(e) => {
-                const target = e.currentTarget as HTMLImageElement;
-                if (!target.dataset.triedFallback) {
-                  target.dataset.triedFallback = 'true';
-                  target.src = '/VHGM profesional profile.png';
-                }
-              }}
-            />
-            <div className="absolute -bottom-1 -right-1 brand-mark w-5 h-5 text-[9px] bg-acid text-night font-bold shadow">
-              ✓
-            </div>
-          </div>
+          <DrGarciaAvatar size="lg" />
           <div>
             <div className="footer-title text-acid font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2">
               <span>built by Dr. Victor Garcia M</span>

@@ -11,6 +11,7 @@ import {
   ExternalLink,
   Sparkles
 } from 'lucide-react';
+import { DrGarciaAvatar } from './DrGarciaAvatar';
 
 interface NavbarProps {
   activeTab: 'slos' | 'notebooks' | 'aigame';
@@ -165,9 +166,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Owner Auth Button */}
             {isOwner ? (
               <div className="flex items-center space-x-1.5 pl-1.5 border-l border-line">
-                <div className="pill acid py-1 px-2.5 font-mono text-[11px] font-bold">
-                  <ShieldCheck className="w-3.5 h-3.5 text-ink" />
-                  <span className="hidden sm:inline">Owner: Dr. Garcia</span>
+                <div className="pill acid py-0.5 pl-1 pr-2.5 font-mono text-[11px] font-bold flex items-center gap-1.5">
+                  <DrGarciaAvatar size="sm" showBadge={false} />
+                  <span className="hidden sm:inline">Dr. Garcia (Owner)</span>
                 </div>
                 <button
                   id="btn-logout"

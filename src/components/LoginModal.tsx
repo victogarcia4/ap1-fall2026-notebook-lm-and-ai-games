@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Lock, Eye, EyeOff, ShieldCheck, X, AlertCircle } from 'lucide-react';
+import { DrGarciaAvatar } from './DrGarciaAvatar';
 
 interface LoginModalProps {
   isOpen: boolean;
@@ -43,10 +44,8 @@ export const LoginModal: React.FC<LoginModalProps> = ({
         </button>
 
         {/* Header */}
-        <div className="flex items-center space-x-3 mb-6">
-          <div className="w-12 h-12 rounded-2xl bg-night text-acid flex items-center justify-center shadow-md">
-            <Lock className="w-6 h-6" />
-          </div>
+        <div className="flex items-center space-x-3.5 mb-6">
+          <DrGarciaAvatar size="md" />
           <div>
             <h2 className="text-xl font-display font-bold text-ink">Owner Authentication</h2>
             <p className="text-xs text-muted font-mono">Dr. Victor Garcia M — Full Administrative Rights</p>

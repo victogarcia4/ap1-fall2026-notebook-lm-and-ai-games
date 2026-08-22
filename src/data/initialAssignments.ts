@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v3';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v3';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v3';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v4';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v4';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v4';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
