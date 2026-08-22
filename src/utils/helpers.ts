@@ -42,13 +42,24 @@ TARGET LEARNING OUTCOME (SLO):
 
 HAPS STANDARD CODE: ${hapsCode}
 
-Please generate the following structured study assets based on the uploaded lecture and textbook sources:
-1. EXECUTIVE BRIEFING: A 400-word concise synthesis explaining the anatomical structures, physiological mechanisms, and homeostatic relevance.
-2. STEP-BY-STEP PHYSIOLOGY BREAKDOWN: Detail each sequential phase or pathway (including chemical messengers, ion movements, or anatomical landmarks).
-3. CLINICAL CORRELATION CASE: A realistic clinical case demonstrating what happens when this homeostatic mechanism fails or is disrupted.
-4. KEY TERMINOLOGY GLOSSARY: 8-10 essential terms with precise scientific definitions.
-5. 5 HIGH-YIELD PRACTICE QUESTIONS: Multiple-choice board-style questions with detailed rationales for each option.
-6. AUDIO OVERVIEW DIRECTIVE: Recommended dialogue focus points for NotebookLM's 2-host audio podcast overview.`;
+Please generate the required 5 core study assets based on the uploaded lecture notes and OpenStax A&P sources:
+
+1. AUDIO (PODCAST OVERVIEW):
+   - Structured 2-host conversational script and dialogue focus points for NotebookLM's Audio Overview deep-dive.
+   - Host A poses insightful clinical questions; Host B breaks down the underlying physiological feedback mechanisms.
+
+2. VIDEO (SHORTS):
+   - A 60-second vertical micro-lecture storyboard & punchy script for YouTube/TikTok/Instagram Shorts.
+   - Hook (0-5s), Visual Cue & Anatomical Landmark (5-25s), Mechanism Breakdown (25-50s), Clinical Takeaway / High-Yield Callout (50-60s).
+
+3. SLIDE DECK:
+   - 6 to 8 structured presentation slides with title, bulleted key principles, anatomical relationships, step-by-step pathways, and homeostatic relevance.
+
+4. INFOGRAPHIC:
+   - Textual layout, ASCII/data flow concept map, and visual design blueprint for a 1-page visual summary diagram of the organ system pathway.
+
+5. FLASHCARD SET:
+   - 10-15 high-yield active recall flashcards (Front: Concept/Clinical Scenario/Structure; Back: Precise Physiological Definition & Board-Style Rationale).`;
 }
 
 export function generateAIGamePrompt(sloText: string, hapsCode: string): string {

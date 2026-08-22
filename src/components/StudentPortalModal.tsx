@@ -10,7 +10,12 @@ import {
   ExternalLink, 
   Sparkles, 
   Award,
-  Share2
+  Share2,
+  Headphones,
+  Video,
+  Presentation,
+  Image as ImageIcon,
+  Layers
 } from 'lucide-react';
 import { Assignment, Student, ExamCategory } from '../types';
 import { getExamFullName } from '../data/examSlos';
@@ -173,6 +178,31 @@ export const StudentPortalModal: React.FC<StudentPortalModalProps> = ({
                     <p className="text-[11px] text-muted italic">
                       Standard Nominal: {a.hapsNominal}
                     </p>
+
+                    {!isFinal && (
+                      <div className="flex flex-wrap gap-1 pt-1 text-[10px] font-medium">
+                        <span className="px-1.5 py-0.5 rounded bg-paper-2 border border-line text-ink flex items-center gap-1">
+                          <Headphones className="w-2.5 h-2.5 text-orange" />
+                          <span>Audio</span>
+                        </span>
+                        <span className="px-1.5 py-0.5 rounded bg-paper-2 border border-line text-ink flex items-center gap-1">
+                          <Video className="w-2.5 h-2.5 text-red" />
+                          <span>Video (Shorts)</span>
+                        </span>
+                        <span className="px-1.5 py-0.5 rounded bg-paper-2 border border-line text-ink flex items-center gap-1">
+                          <Presentation className="w-2.5 h-2.5 text-blue-600" />
+                          <span>Slide Deck</span>
+                        </span>
+                        <span className="px-1.5 py-0.5 rounded bg-paper-2 border border-line text-ink flex items-center gap-1">
+                          <ImageIcon className="w-2.5 h-2.5 text-purple-600" />
+                          <span>Infographic</span>
+                        </span>
+                        <span className="px-1.5 py-0.5 rounded bg-paper-2 border border-line text-ink flex items-center gap-1">
+                          <Layers className="w-2.5 h-2.5 text-emerald-700" />
+                          <span>Flashcards</span>
+                        </span>
+                      </div>
+                    )}
 
                     {a.notebookUrl && (
                       <div className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-[11px] flex items-center justify-between text-emerald-950 font-medium">

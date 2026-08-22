@@ -17,7 +17,11 @@ import {
   Plus, 
   ShieldCheck,
   Share2,
-  FolderOpen
+  FolderOpen,
+  Video,
+  Presentation,
+  Image as ImageIcon,
+  Layers
 } from 'lucide-react';
 import { Assignment, ExamCategory, Student } from '../types';
 import { getExamFullName } from '../data/examSlos';
@@ -153,7 +157,7 @@ export const NotebooksTab: React.FC<NotebooksTabProps> = ({
             <p className="text-xs sm:text-sm text-ink/75 max-w-2xl leading-relaxed">
               {subTab === 'Final'
                 ? 'Final Exam comprehensive learning outcomes for synthesis, Google AI Studio game development, and extra credits.'
-                : `Targeted student notebooks for ${subTab}. Students ingest OpenStax A&P chapters and lecture notes into NotebookLM to generate Audio Overviews, study guides, and flashcards.`}
+                : `Targeted student notebooks for ${subTab}. Students ingest OpenStax A&P chapters and lecture notes into NotebookLM to create audio, video (shorts), slide deck, infographic, and flashcard set.`}
             </p>
           </div>
 
@@ -174,40 +178,47 @@ export const NotebooksTab: React.FC<NotebooksTabProps> = ({
           </div>
         </div>
 
-        {/* NotebookLM Standard Rubric & Prompt Guide */}
+        {/* NotebookLM Standard Rubric & 5 Deliverables Guide */}
         <div className="paper-card-2 p-4 text-xs text-ink space-y-2">
           <div className="flex items-center space-x-2 text-ink font-bold">
             <Sparkles className="w-4 h-4 text-orange" />
-            <span className="font-display">NotebookLM Submission Rubric & Requirements (BIOL 2401 Standard)</span>
+            <span className="font-display">NotebookLM 5 Core Deliverables (BIOL 2401 Standard)</span>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-[11px] pt-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 text-[11px] pt-1">
             <div className="p-3 rounded-xl bg-paper border border-line space-y-1">
               <div className="font-bold text-ink flex items-center gap-1.5">
                 <Headphones className="w-3.5 h-3.5 text-orange" />
-                <span>1. Audio Overview</span>
+                <span>1. Audio</span>
               </div>
-              <span className="text-muted leading-tight block">Generate a 2-host audio deep-dive explicitly debating your assigned SLO mechanism.</span>
+              <span className="text-muted leading-tight block">2-host audio deep-dive debating your assigned SLO mechanism.</span>
             </div>
             <div className="p-3 rounded-xl bg-paper border border-line space-y-1">
               <div className="font-bold text-ink flex items-center gap-1.5">
-                <FileText className="w-3.5 h-3.5 text-emerald-700" />
-                <span>2. Study Brief</span>
+                <Video className="w-3.5 h-3.5 text-red" />
+                <span>2. Video (Shorts)</span>
               </div>
-              <span className="text-muted leading-tight block">400-word structured guide with physiological steps & homeostatic relevance.</span>
+              <span className="text-muted leading-tight block">60s micro-lecture vertical script & visual storyboard breakdown.</span>
             </div>
             <div className="p-3 rounded-xl bg-paper border border-line space-y-1">
               <div className="font-bold text-ink flex items-center gap-1.5">
-                <HelpCircle className="w-3.5 h-3.5 text-amber-700" />
-                <span>3. 5 Practice Questions</span>
+                <Presentation className="w-3.5 h-3.5 text-blue-600" />
+                <span>3. Slide Deck</span>
               </div>
-              <span className="text-muted leading-tight block">Board-style multiple-choice questions with thorough clinical explanations.</span>
+              <span className="text-muted leading-tight block">Structured presentation slides with anatomy & pathways.</span>
             </div>
             <div className="p-3 rounded-xl bg-paper border border-line space-y-1">
               <div className="font-bold text-ink flex items-center gap-1.5">
-                <Share2 className="w-3.5 h-3.5 text-purple-700" />
-                <span>4. Shareable Link</span>
+                <ImageIcon className="w-3.5 h-3.5 text-purple-600" />
+                <span>4. Infographic</span>
               </div>
-              <span className="text-muted leading-tight block">Share link set to "Anyone with the link can view" submitted in this portal.</span>
+              <span className="text-muted leading-tight block">Visual concept map & diagrammatic summary of the organ system.</span>
+            </div>
+            <div className="p-3 rounded-xl bg-paper border border-line space-y-1">
+              <div className="font-bold text-ink flex items-center gap-1.5">
+                <Layers className="w-3.5 h-3.5 text-emerald-700" />
+                <span>5. Flashcard Set</span>
+              </div>
+              <span className="text-muted leading-tight block">10–15 high-yield active recall cards with clinical rationales.</span>
             </div>
           </div>
         </div>
@@ -278,6 +289,74 @@ export const NotebooksTab: React.FC<NotebooksTabProps> = ({
                   <p className="text-xs text-ink font-medium line-clamp-3 leading-relaxed">
                     "{assignment.sloText}"
                   </p>
+                </div>
+
+                {/* 5 Core Deliverables Checklist Badges */}
+                <div className="pt-1">
+                  <span className="text-[10px] font-mono text-muted font-bold block mb-1 uppercase tracking-wider">
+                    5 Required Deliverables:
+                  </span>
+                  <div className="flex flex-wrap gap-1 text-[10px] font-medium">
+                    <span
+                      className={`px-1.5 py-0.5 rounded border flex items-center gap-1 ${
+                        assignment.deliverables?.audio || assignment.notebookUrl
+                          ? 'bg-orange/10 border-orange/30 text-orange font-bold'
+                          : 'bg-paper-2 border-line text-muted'
+                      }`}
+                      title="Audio Overview"
+                    >
+                      <Headphones className="w-2.5 h-2.5" />
+                      <span>Audio</span>
+                    </span>
+
+                    <span
+                      className={`px-1.5 py-0.5 rounded border flex items-center gap-1 ${
+                        assignment.deliverables?.video || assignment.notebookUrl
+                          ? 'bg-red/10 border-red/30 text-red font-bold'
+                          : 'bg-paper-2 border-line text-muted'
+                      }`}
+                      title="Video (Shorts)"
+                    >
+                      <Video className="w-2.5 h-2.5" />
+                      <span>Video</span>
+                    </span>
+
+                    <span
+                      className={`px-1.5 py-0.5 rounded border flex items-center gap-1 ${
+                        assignment.deliverables?.slideDeck || assignment.notebookUrl
+                          ? 'bg-blue-500/10 border-blue-500/30 text-blue-700 font-bold'
+                          : 'bg-paper-2 border-line text-muted'
+                      }`}
+                      title="Slide Deck"
+                    >
+                      <Presentation className="w-2.5 h-2.5" />
+                      <span>Slides</span>
+                    </span>
+
+                    <span
+                      className={`px-1.5 py-0.5 rounded border flex items-center gap-1 ${
+                        assignment.deliverables?.infographic || assignment.notebookUrl
+                          ? 'bg-purple-500/10 border-purple-500/30 text-purple-700 font-bold'
+                          : 'bg-paper-2 border-line text-muted'
+                      }`}
+                      title="Infographic"
+                    >
+                      <ImageIcon className="w-2.5 h-2.5" />
+                      <span>Infographic</span>
+                    </span>
+
+                    <span
+                      className={`px-1.5 py-0.5 rounded border flex items-center gap-1 ${
+                        assignment.deliverables?.flashcards || assignment.notebookUrl
+                          ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-800 font-bold'
+                          : 'bg-paper-2 border-line text-muted'
+                      }`}
+                      title="Flashcard Set"
+                    >
+                      <Layers className="w-2.5 h-2.5" />
+                      <span>Flashcards</span>
+                    </span>
+                  </div>
                 </div>
 
                 {/* Submitted Notebook URL or Notes */}

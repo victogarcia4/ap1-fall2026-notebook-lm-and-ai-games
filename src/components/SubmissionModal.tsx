@@ -1,6 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { X, ExternalLink, Send, BookOpen, Gamepad2, CheckCircle2 } from 'lucide-react';
-import { Assignment } from '../types';
+import { 
+  X, 
+  ExternalLink, 
+  Send, 
+  BookOpen, 
+  Gamepad2, 
+  CheckCircle2, 
+  Headphones, 
+  Video, 
+  Presentation, 
+  Image as ImageIcon, 
+  Layers 
+} from 'lucide-react';
+import { Assignment, AssignmentDeliverables } from '../types';
 
 interface SubmissionModalProps {
   assignment: Assignment | null;
@@ -23,11 +35,26 @@ export const SubmissionModal: React.FC<SubmissionModalProps> = ({
   const [gameTitle, setGameTitle] = useState(assignment.gameTitle || '');
   const [status, setStatus] = useState<Assignment['status']>(assignment.status || 'submitted');
 
+  const [deliverables, setDeliverables] = useState<AssignmentDeliverables>({
+    audio: assignment.deliverables?.audio ?? true,
+    video: assignment.deliverables?.video ?? true,
+    slideDeck: assignment.deliverables?.slideDeck ?? true,
+    infographic: assignment.deliverables?.infographic ?? true,
+    flashcards: assignment.deliverables?.flashcards ?? true,
+  });
+
   useEffect(() => {
     setUrl(assignment.notebookUrl || assignment.gameUrl || '');
     setNotes(assignment.notebookNotes || '');
     setGameTitle(assignment.gameTitle || '');
     setStatus(assignment.status || 'submitted');
+    setDeliverables({
+      audio: assignment.deliverables?.audio ?? true,
+      video: assignment.deliverables?.video ?? true,
+      slideDeck: assignment.deliverables?.slideDeck ?? true,
+      infographic: assignment.deliverables?.infographic ?? true,
+      flashcards: assignment.deliverables?.flashcards ?? true,
+    });
   }, [assignment]);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -43,6 +70,7 @@ export const SubmissionModal: React.FC<SubmissionModalProps> = ({
       gameUrl: isFinal ? url : assignment.gameUrl,
       notebookNotes: notes,
       gameTitle: isFinal ? gameTitle : assignment.gameTitle,
+      deliverables: !isFinal ? deliverables : undefined,
       status: 'submitted',
       submittedAt: new Date().toISOString().split('T')[0],
       updatedAt: new Date().toISOString().split('T')[0],
@@ -104,6 +132,81 @@ export const SubmissionModal: React.FC<SubmissionModalProps> = ({
             </div>
           )}
 
+          {/* 5 Deliverables Checklist for NotebookLM */}
+          {!isFinal && (
+            <div className="space-y-2 p-3 rounded-2xl bg-paper-2 border border-line">
+              <label className="block text-xs font-bold font-mono text-ink uppercase tracking-wider">
+                Included Deliverables Checklist:
+              </label>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                <label className="flex items-center space-x-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={deliverables.audio}
+                    onChange={(e) => setDeliverables({ ...deliverables, audio: e.target.checked })}
+                    className="rounded border-line text-night focus:ring-acid"
+                  />
+                  <span className="flex items-center gap-1 text-ink font-medium">
+                    <Headphones className="w-3.5 h-3.5 text-orange" />
+                    <span>Audio (Overview)</span>
+                  </span>
+                </label>
+
+                <label className="flex items-center space-x-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={deliverables.video}
+                    onChange={(e) => setDeliverables({ ...deliverables, video: e.target.checked })}
+                    className="rounded border-line text-night focus:ring-acid"
+                  />
+                  <span className="flex items-center gap-1 text-ink font-medium">
+                    <Video className="w-3.5 h-3.5 text-red" />
+                    <span>Video (Shorts)</span>
+                  </span>
+                </label>
+
+                <label className="flex items-center space-x-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={deliverables.slideDeck}
+                    onChange={(e) => setDeliverables({ ...deliverables, slideDeck: e.target.checked })}
+                    className="rounded border-line text-night focus:ring-acid"
+                  />
+                  <span className="flex items-center gap-1 text-ink font-medium">
+                    <Presentation className="w-3.5 h-3.5 text-blue-600" />
+                    <span>Slide Deck</span>
+                  </span>
+                </label>
+
+                <label className="flex items-center space-x-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={deliverables.infographic}
+                    onChange={(e) => setDeliverables({ ...deliverables, infographic: e.target.checked })}
+                    className="rounded border-line text-night focus:ring-acid"
+                  />
+                  <span className="flex items-center gap-1 text-ink font-medium">
+                    <ImageIcon className="w-3.5 h-3.5 text-purple-600" />
+                    <span>Infographic</span>
+                  </span>
+                </label>
+
+                <label className="flex items-center space-x-2 cursor-pointer sm:col-span-2">
+                  <input
+                    type="checkbox"
+                    checked={deliverables.flashcards}
+                    onChange={(e) => setDeliverables({ ...deliverables, flashcards: e.target.checked })}
+                    className="rounded border-line text-night focus:ring-acid"
+                  />
+                  <span className="flex items-center gap-1 text-ink font-medium">
+                    <Layers className="w-3.5 h-3.5 text-emerald-700" />
+                    <span>Flashcard Set</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+          )}
+
           <div>
             <label className="block text-xs font-bold font-mono text-ink mb-1.5 uppercase tracking-wider">
               {isFinal ? 'Google AI Studio / Shared Web Game URL' : 'NotebookLM Shareable Link'}
@@ -127,13 +230,13 @@ export const SubmissionModal: React.FC<SubmissionModalProps> = ({
 
           <div>
             <label className="block text-xs font-bold font-mono text-ink mb-1.5 uppercase tracking-wider">
-              Synthesis Notes & Audio Overview Highlights (Optional)
+              Synthesis Notes, Highlights & Takeaways (Optional)
             </label>
             <textarea
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               rows={3}
-              placeholder="Brief summary of your generated briefing, key takeaway, and podcast discussion..."
+              placeholder="Brief summary of your audio, video shorts, slides, infographic, and flashcard set..."
               className="w-full px-4 py-2 rounded-xl bg-paper-2 border border-line text-xs text-ink placeholder-muted focus:outline-none focus:border-ink font-sans"
             />
           </div>

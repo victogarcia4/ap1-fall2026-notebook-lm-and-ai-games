@@ -36,17 +36,17 @@ export function generateInitialAssignments(): Assignment[] {
       if (student.isInstructor) {
         status = 'reviewed';
         notebookUrl = 'https://notebooklm.google.com/notebook/demo-ap1-instructor';
-        notebookNotes = 'Instructor exemplar audio overview and comprehensive lecture study briefing generated with NotebookLM.';
+        notebookNotes = 'Instructor exemplar: audio deep-dive, video short storyboard, 8-slide presentation deck, 1-page infographic, and 15 flashcards.';
         if (exam === 'Final') {
           gameUrl = 'https://aistudio.google.com/game/ap1-homeostasis-challenge';
           gameTitle = 'Homeostasis & Physiological Mechanisms Master Challenge';
         }
         grade = '100 / 100 (Exemplar)';
-        feedback = 'Master model assignment. Audio review and deep dive outline complete.';
+        feedback = 'Master model assignment. Audio, video shorts, slide deck, infographic, and flashcard set complete.';
       } else if (student.id === '1111111') { // Student 1
         status = 'submitted';
         notebookUrl = 'https://notebooklm.google.com/notebook/student1-ap1-submission';
-        notebookNotes = 'Study guide, 10 flashcards, and podcast dialogue created from HAPS standard.';
+        notebookNotes = 'Completed all 5 assets: Audio deep-dive, 60s video short script, slide deck, infographic map, and flashcard set.';
         if (exam === 'Final') {
           gameUrl = 'https://aistudio.google.com/game/student1-cell-division-arcade';
           gameTitle = 'Cell Division & Mitosis Arcade Quest';
@@ -65,6 +65,13 @@ export function generateInitialAssignments(): Assignment[] {
         hapsNominal: slo.hapsNominal,
         notebookUrl,
         notebookNotes,
+        deliverables: notebookUrl ? {
+          audio: true,
+          video: true,
+          slideDeck: true,
+          infographic: true,
+          flashcards: true,
+        } : undefined,
         gameUrl,
         gameTitle,
         status,

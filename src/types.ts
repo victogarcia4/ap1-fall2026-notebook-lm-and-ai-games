@@ -30,6 +30,14 @@ export interface SLOItem {
   keywords?: string[];
 }
 
+export interface AssignmentDeliverables {
+  audio?: boolean;
+  video?: boolean;
+  slideDeck?: boolean;
+  infographic?: boolean;
+  flashcards?: boolean;
+}
+
 export interface Assignment {
   id: string;
   studentId: string;
@@ -42,6 +50,7 @@ export interface Assignment {
   hapsNominal: string;
   notebookUrl?: string;
   notebookNotes?: string;
+  deliverables?: AssignmentDeliverables;
   gameUrl?: string;
   gameTitle?: string;
   gamePrompt?: string;
