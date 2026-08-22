@@ -150,29 +150,42 @@ export default function App() {
       return copy;
     };
 
-    students.forEach((student) => {
-      exams.forEach((exam) => {
-        const slos = ALL_EXAM_SLOS[exam];
-        const randomSlo = slos[Math.floor(Math.random() * slos.length)];
-        newAssignments.push({
-          id: `${exam}-${student.id}`,
-          studentId: student.id,
-          studentName: student.name,
-          studentSection: student.section,
-          exam,
-          sloId: randomSlo.id,
-          sloText: randomSlo.text,
-          hapsCode: randomSlo.hapsCode,
-          hapsNominal: randomSlo.hapsNominal,
-          status: student.isInstructor ? 'reviewed' : 'assigned',
-          grade: student.isInstructor ? '100 / 100' : undefined,
-          updatedAt: new Date().toISOString().split('T')[0],
+    // Group students by section
+    const sections: Record<string, Student[]> = {};
+    students.forEach((s) => {
+      const sec = s.section || 'General';
+      if (!sections[sec]) sections[sec] = [];
+      sections[sec].push(s);
+    });
+
+    exams.forEach((exam) => {
+      const baseSlos = ALL_EXAM_SLOS[exam] || [];
+      if (baseSlos.length === 0) return;
+
+      Object.entries(sections).forEach(([secName, secStudents]) => {
+        const shuffledSlos = shuffle(baseSlos);
+        secStudents.forEach((student, idx) => {
+          const slo = shuffledSlos[idx % shuffledSlos.length];
+          newAssignments.push({
+            id: `${exam}-${student.id}`,
+            studentId: student.id,
+            studentName: student.name,
+            studentSection: student.section,
+            exam,
+            sloId: slo.id,
+            sloText: slo.text,
+            hapsCode: slo.hapsCode,
+            hapsNominal: slo.hapsNominal,
+            status: student.isInstructor ? 'reviewed' : 'assigned',
+            grade: student.isInstructor ? '100 / 100' : undefined,
+            updatedAt: new Date().toISOString().split('T')[0],
+          });
         });
       });
     });
 
     setAssignments(newAssignments);
-    showToast('SLOs redistributed across all students randomly.');
+    showToast('SLOs redistributed equitably across all sections.');
   };
 
   // Game Handlers
@@ -295,6 +308,16 @@ export default function App() {
 
         <div className="flex flex-wrap items-center gap-3 text-xs">
           <a
+            href="https://ap1-fall2026-notebook-lm.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-btn acid-btn py-1.5 px-3 text-xs font-bold"
+          >
+            <span>Live Vercel App</span>
+            <ExternalLink className="w-3 h-3" />
+          </a>
+
+          <a
             href="https://notebooklm.google.com/"
             target="_blank"
             rel="noopener noreferrer"
@@ -315,13 +338,13 @@ export default function App() {
           </a>
 
           <a
-            href="https://github.com/victogarcia4/biol-2401-notebook-tutor.git"
+            href="https://github.com/victogarcia4/ap1-fall2026-notebook-lm"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 py-1.5 px-3 text-xs text-paper/80 hover:text-acid transition font-mono"
           >
             <Github className="w-3.5 h-3.5" />
-            <span>GitHub Repository</span>
+            <span>GitHub Repo</span>
           </a>
         </div>
       </footer>

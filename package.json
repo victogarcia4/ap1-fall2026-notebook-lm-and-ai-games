@@ -1,7 +1,13 @@
 {
-  "name": "react-example",
+  "name": "ap1-fall2026-notebook-lm",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "BIOL 2401 A&P 1 NotebookLM SLO Manager and Google AI Studio Game Arena (Fall 2026)",
+  "homepage": "https://ap1-fall2026-notebook-lm.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/victogarcia4/ap1-fall2026-notebook-lm.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",

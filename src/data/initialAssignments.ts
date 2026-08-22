@@ -2,23 +2,32 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v2';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v2';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v2';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v3';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v3';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v3';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
   const exams: ExamCategory[] = ['LE1', 'LE2', 'LE3', 'LE4', 'Final'];
 
-  // For each student, assign an SLO for each exam
-  INITIAL_STUDENTS.forEach((student, studentIndex) => {
+  // Track the student index within each section so each section gets independent full coverage
+  const sectionCounters: Record<string, number> = {};
+
+  INITIAL_STUDENTS.forEach((student) => {
+    const sec = student.section || 'General';
+    if (sectionCounters[sec] === undefined) {
+      sectionCounters[sec] = 0;
+    }
+    const studentSecIdx = sectionCounters[sec];
+    sectionCounters[sec] += 1;
+
     exams.forEach((exam) => {
       const slos = ALL_EXAM_SLOS[exam];
       if (!slos || slos.length === 0) return;
 
-      // Deterministic round-robin distribution with offset based on exam index to ensure variety
-      const examOffset = exams.indexOf(exam) * 7;
-      const sloIndex = (studentIndex + examOffset) % slos.length;
+      // Assign sequentially within section; wraps around if students in section > SLO count
+      // This ensures full unique coverage within section, and equitable repetition across sections
+      const sloIndex = studentSecIdx % slos.length;
       const slo = slos[sloIndex];
 
       const assignmentId = `${exam}-${student.id}`;
