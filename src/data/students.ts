@@ -64,14 +64,14 @@ export const INITIAL_STUDENTS: Student[] = [
   { id: '7123232', name: 'Tutor, Jessica Renee', section: '1201' },
   { id: '7778338', name: 'Velazquez, Yesenia', section: '1201' },
 
-  // Section 1501
+  // Section 1501 (8 Students)
   { id: '7996309', name: 'Alvarez, Alexa Michelle', section: '1501' },
+  { id: '7889750', name: 'Battaglia, Lilli Rae', section: '1501' },
   { id: '8035519', name: 'Carrizalez, Dulce Maria', section: '1501' },
   { id: '7959119', name: 'Davis, Dana Yvette', section: '1501' },
-  { id: '7412945', name: 'Gabriel, Josephine Kenny', section: '1501' },
   { id: '7356820', name: 'Gentry, Quincy Jerrod', section: '1501' },
-  { id: '7772582', name: 'Granados, Kayla Yaretzy', section: '1501' },
-  { id: '8157078', name: 'Mcintosh, Fatinah Mcintosh Aminah', section: '1501' },
+  { id: '7772582', name: 'Granados, Kayla Yaret', section: '1501' },
+  { id: '8157078', name: 'Mcintosh, Fatinah Mci', section: '1501' },
   { id: '8036488', name: 'Richard, Alayzia', section: '1501' },
 
   // 10 Mock Students
