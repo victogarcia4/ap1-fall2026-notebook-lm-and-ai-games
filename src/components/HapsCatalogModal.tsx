@@ -16,8 +16,6 @@ export const HapsCatalogModal: React.FC<HapsCatalogModalProps> = ({
   const [selectedModule, setSelectedModule] = useState<string>('ALL');
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
 
-  if (!isOpen) return null;
-
   const modules = [
     { code: 'ALL', name: 'All Modules' },
     { code: 'AP-19-A', name: 'Module A - Body Plan & Organization' },
@@ -50,6 +48,8 @@ export const HapsCatalogModal: React.FC<HapsCatalogModalProps> = ({
       return true;
     });
   }, [searchTerm, selectedModule]);
+
+  if (!isOpen) return null;
 
   const handleCopyCode = (code: string) => {
     navigator.clipboard.writeText(code);

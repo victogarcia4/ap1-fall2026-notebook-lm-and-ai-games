@@ -27,35 +27,37 @@ export const SubmissionModal: React.FC<SubmissionModalProps> = ({
   onClose,
   onSubmit,
 }) => {
-  if (!isOpen || !assignment) return null;
-
-  const isFinal = assignment.exam === 'Final';
-  const [url, setUrl] = useState(assignment.notebookUrl || assignment.gameUrl || '');
-  const [notes, setNotes] = useState(assignment.notebookNotes || '');
-  const [gameTitle, setGameTitle] = useState(assignment.gameTitle || '');
-  const [status, setStatus] = useState<Assignment['status']>(assignment.status || 'submitted');
+  const isFinal = assignment?.exam === 'Final';
+  const [url, setUrl] = useState('');
+  const [notes, setNotes] = useState('');
+  const [gameTitle, setGameTitle] = useState('');
+  const [status, setStatus] = useState<Assignment['status']>('submitted');
 
   const [deliverables, setDeliverables] = useState<AssignmentDeliverables>({
-    audio: assignment.deliverables?.audio ?? true,
-    video: assignment.deliverables?.video ?? true,
-    slideDeck: assignment.deliverables?.slideDeck ?? true,
-    infographic: assignment.deliverables?.infographic ?? true,
-    flashcards: assignment.deliverables?.flashcards ?? true,
+    audio: true,
+    video: true,
+    slideDeck: true,
+    infographic: true,
+    flashcards: true,
   });
 
   useEffect(() => {
-    setUrl(assignment.notebookUrl || assignment.gameUrl || '');
-    setNotes(assignment.notebookNotes || '');
-    setGameTitle(assignment.gameTitle || '');
-    setStatus(assignment.status || 'submitted');
-    setDeliverables({
-      audio: assignment.deliverables?.audio ?? true,
-      video: assignment.deliverables?.video ?? true,
-      slideDeck: assignment.deliverables?.slideDeck ?? true,
-      infographic: assignment.deliverables?.infographic ?? true,
-      flashcards: assignment.deliverables?.flashcards ?? true,
-    });
+    if (assignment) {
+      setUrl(assignment.notebookUrl || assignment.gameUrl || '');
+      setNotes(assignment.notebookNotes || '');
+      setGameTitle(assignment.gameTitle || '');
+      setStatus(assignment.status || 'submitted');
+      setDeliverables({
+        audio: assignment.deliverables?.audio ?? true,
+        video: assignment.deliverables?.video ?? true,
+        slideDeck: assignment.deliverables?.slideDeck ?? true,
+        infographic: assignment.deliverables?.infographic ?? true,
+        flashcards: assignment.deliverables?.flashcards ?? true,
+      });
+    }
   }, [assignment]);
+
+  if (!isOpen || !assignment) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

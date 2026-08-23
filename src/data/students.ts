@@ -38,11 +38,11 @@ export const INITIAL_STUDENTS: Student[] = [
   { id: '7791352', name: 'Suarez, Evelyn', section: '1101' },
   { id: '7937808', name: 'Torres, Katherine Stephanie', section: '1101' },
 
-  // Section 1201
+  // Section 1201 (24 Students)
   { id: '7869456', name: 'Argueta, Dayami', section: '1201' },
   { id: '8029112', name: 'Aviles, Carmen Stephany', section: '1201' },
   { id: '7766137', name: 'Blunt, Jaelyn Brianna', section: '1201' },
-  { id: '7948782', name: 'Campa, Yarely Yarely Campa', section: '1201' },
+  { id: '7948782', name: 'Campa, Yarely', section: '1201' },
   { id: '8099509', name: 'Curiel, Valerie Angela', section: '1201' },
   { id: '7057444', name: 'Curvey, Denae Jovan', section: '1201' },
   { id: '7998925', name: 'Dokes, Donmonique', section: '1201' },
@@ -55,7 +55,7 @@ export const INITIAL_STUDENTS: Student[] = [
   { id: '8035971', name: 'Moran, Angel Adrian', section: '1201' },
   { id: '8029974', name: 'Ponce, Jaslen', section: '1201' },
   { id: '8094555', name: 'Regalado, Mia Pamela', section: '1201' },
-  { id: '7928723-1201', name: 'Resendiz, Luz (Sec 1201)', section: '1201' },
+  { id: '7928723', name: 'Resendiz, Luz', section: '1201' },
   { id: '8088157', name: 'Rivera Rodriguez, Thalia De La Caridad', section: '1201' },
   { id: '7957100', name: 'Rizo, Mercedes Renee', section: '1201' },
   { id: '7828698', name: 'Santillan, Noemi Abigail', section: '1201' },
