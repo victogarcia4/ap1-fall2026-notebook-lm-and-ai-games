@@ -18,7 +18,7 @@ import {
   Layers
 } from 'lucide-react';
 import { Assignment, Student, ExamCategory } from '../types';
-import { getExamFullName } from '../data/examSlos';
+import { getExamFullName, getSloChapter } from '../data/examSlos';
 import { generateNotebookLMPrompt, generateAIGamePrompt } from '../utils/helpers';
 
 interface StudentPortalModalProps {
@@ -159,9 +159,12 @@ export const StudentPortalModal: React.FC<StudentPortalModalProps> = ({
                     className="p-4 rounded-2xl bg-paper border border-line space-y-2.5 shadow-sm"
                   >
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2">
+                      <div className="flex items-center space-x-2 flex-wrap">
                         <span className="pill acid text-xs font-mono font-bold">
                           {a.exam}
+                        </span>
+                        <span className="pill text-xs font-mono font-bold bg-amber-500/15 text-amber-900 border border-amber-500/30">
+                          {a.chapter || getSloChapter(a.sloText, a.exam)}
                         </span>
                         <span className="text-xs text-muted font-medium">
                           {getExamFullName(a.exam).split('(')[0]}
@@ -176,7 +179,9 @@ export const StudentPortalModal: React.FC<StudentPortalModalProps> = ({
                       "{a.sloText}"
                     </p>
                     <p className="text-[11px] text-muted italic">
-                      Standard Nominal: {a.hapsNominal}
+                      <span className="font-semibold text-ink/75 font-mono not-italic">{a.chapter || getSloChapter(a.sloText, a.exam)}</span>
+                      <span className="mx-1.5 text-muted/50">•</span>
+                      <span>Standard Nominal: {a.hapsNominal}</span>
                     </p>
 
                     {!isFinal && (

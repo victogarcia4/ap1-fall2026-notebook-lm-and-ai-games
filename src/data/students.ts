@@ -9,7 +9,7 @@ export const INITIAL_STUDENTS: Student[] = [
     isInstructor: true,
   },
   // Section 1101 (28 Students)
-  { id: '7881209', name: 'ARMENDARIZ, ALIYAH', section: '1101' },
+  { id: '7881209', name: 'Armendariz, Aliyah', section: '1101' },
   { id: '8121338', name: 'Baker, Xavier Lemarc', section: '1101' },
   { id: '7854589', name: 'Banks Jr, Christopher Kareen', section: '1101' },
   { id: '7965782', name: 'Cabrera, Daniela Araceli', section: '1101' },
@@ -38,7 +38,7 @@ export const INITIAL_STUDENTS: Student[] = [
   { id: '7791352', name: 'Suarez, Evelyn', section: '1101' },
   { id: '7937808', name: 'Torres, Katherine Stephanie', section: '1101' },
 
-  // Section 1201 (24 Students)
+  // Section 1201 (25 Students)
   { id: '7869456', name: 'Argueta, Dayami', section: '1201' },
   { id: '8029112', name: 'Aviles, Carmen Stephany', section: '1201' },
   { id: '7766137', name: 'Blunt, Jaelyn Brianna', section: '1201' },
@@ -57,21 +57,24 @@ export const INITIAL_STUDENTS: Student[] = [
   { id: '8094555', name: 'Regalado, Mia Pamela', section: '1201' },
   { id: '7928723', name: 'Resendiz, Luz', section: '1201' },
   { id: '8088157', name: 'Rivera Rodriguez, Thalia De La Caridad', section: '1201' },
-  { id: '7957100', name: 'Rizo, Mercedes Renee', section: '1201' },
   { id: '7828698', name: 'Santillan, Noemi Abigail', section: '1201' },
   { id: '8081836', name: 'Seriki, Zainab', section: '1201' },
   { id: '7687626', name: 'Taft, William', section: '1201' },
   { id: '7123232', name: 'Tutor, Jessica Renee', section: '1201' },
   { id: '7778338', name: 'Velazquez, Yesenia', section: '1201' },
+  { id: '7590906', name: 'Villasana, Sergio', section: '1201' },
+  { id: '8063449', name: 'Wolford, Hannah', section: '1201' },
 
-  // Section 1501 (8 Students)
+  // Section 1501 (10 Students)
   { id: '7996309', name: 'Alvarez, Alexa Michelle', section: '1501' },
   { id: '7889750', name: 'Battaglia, Lilli Rae', section: '1501' },
+  { id: '7989701', name: 'Bussey, Leslie Ann', section: '1501' },
   { id: '8035519', name: 'Carrizalez, Dulce Maria', section: '1501' },
   { id: '7959119', name: 'Davis, Dana Yvette', section: '1501' },
   { id: '7356820', name: 'Gentry, Quincy Jerrod', section: '1501' },
-  { id: '7772582', name: 'Granados, Kayla Yaret', section: '1501' },
-  { id: '8157078', name: 'Mcintosh, Fatinah Mci', section: '1501' },
+  { id: '7772582', name: 'Granados, Kayla Yaretzy', section: '1501' },
+  { id: '8157078', name: 'Mcintosh, Fatinah Aminah', section: '1501' },
+  { id: '7826640', name: 'Quintanilla, Ellyannie', section: '1501' },
   { id: '8036488', name: 'Richard, Alayzia', section: '1501' },
 
   // 10 Mock Students

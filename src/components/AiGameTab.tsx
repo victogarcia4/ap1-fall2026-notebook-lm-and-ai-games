@@ -19,7 +19,7 @@ import {
   Flame
 } from 'lucide-react';
 import { AIGameData, Assignment, Student } from '../types';
-import { ALL_EXAM_SLOS } from '../data/examSlos';
+import { ALL_EXAM_SLOS, getSloChapter } from '../data/examSlos';
 import { generateAIGamePrompt } from '../utils/helpers';
 
 interface AiGameTabProps {
@@ -179,7 +179,7 @@ export const AiGameTab: React.FC<AiGameTabProps> = ({
             >
               {finalSlos.map((s, idx) => (
                 <option key={s.id} value={idx}>
-                  Final #{idx + 1}: {s.text.slice(0, 65)}... ({s.hapsCode})
+                  Final #{idx + 1}: [{s.chapter}] {s.text.slice(0, 55)}... ({s.hapsCode})
                 </option>
               ))}
             </select>
@@ -403,9 +403,14 @@ export const AiGameTab: React.FC<AiGameTabProps> = ({
             >
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="pill acid text-[10px] font-mono font-bold">
-                    {game.gameType}
-                  </span>
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <span className="pill acid text-[10px] font-mono font-bold">
+                      {game.gameType}
+                    </span>
+                    <span className="pill text-[10px] font-mono font-bold bg-amber-500/15 text-amber-900 border border-amber-500/30">
+                      {getSloChapter(game.sloText, 'Final')}
+                    </span>
+                  </div>
                   <span className="text-[11px] font-mono text-muted font-semibold">{game.hapsCode}</span>
                 </div>
 

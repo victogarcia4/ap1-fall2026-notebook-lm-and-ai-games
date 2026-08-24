@@ -190,9 +190,51 @@ const RAW_FINAL = [
   "Design and model an interactive Google AI Studio learning game architecture that tests student mastery of complex A&P I homeostatic loops."
 ];
 
+export function getChapterForExamAndIndex(exam: ExamCategory, idx: number): string {
+  if (exam === 'LE1') {
+    if (idx < 9) return 'Chapter 1';
+    if (idx < 18) return 'Chapter 2';
+    return 'Chapter 3';
+  }
+  if (exam === 'LE2') {
+    if (idx < 6) return 'Chapter 4';
+    if (idx < 17) return 'Chapter 5';
+    return 'Chapter 6';
+  }
+  if (exam === 'LE3') {
+    if (idx < 12) return 'Chapter 7';
+    if (idx < 19) return 'Chapter 8';
+    return 'Chapter 9';
+  }
+  if (exam === 'LE4') {
+    if (idx < 13) return 'Chapter 10';
+    if (idx < 24) return 'Chapter 11';
+    return 'Chapter 12';
+  }
+  if (exam === 'Final') {
+    const finalChapters = [
+      'Chapter 1',
+      'Chapters 1–3',
+      'Chapter 4',
+      'Chapters 5–9',
+      'Chapter 6',
+      'Chapter 7',
+      'Chapter 8',
+      'Chapters 9 & 10',
+      'Chapters 10 & 11',
+      'Chapters 11 & 12',
+      'Chapter 12',
+      'Chapters 1–12',
+    ];
+    return finalChapters[idx] || 'Chapters 1–12';
+  }
+  return 'Chapter 1';
+}
+
 function buildSlos(list: string[], exam: ExamCategory): SLOItem[] {
   return list.map((text, idx) => {
     const haps = findHapsCorrelation(text);
+    const chapter = getChapterForExamAndIndex(exam, idx);
     return {
       id: `${exam}-SLO-${String(idx + 1).padStart(2, '0')}`,
       exam,
@@ -201,9 +243,28 @@ function buildSlos(list: string[], exam: ExamCategory): SLOItem[] {
       hapsCode: haps.code,
       hapsNominal: haps.nominal,
       hapsModule: haps.module,
-      chapter: haps.chapter,
+      chapter,
     };
   });
+}
+
+export function getSloChapter(sloText: string, exam?: ExamCategory, index?: number): string {
+  if (exam && index !== undefined) {
+    return getChapterForExamAndIndex(exam, index);
+  }
+
+  // Look up in ALL_EXAM_SLOS
+  const exams: ExamCategory[] = exam ? [exam] : ['LE1', 'LE2', 'LE3', 'LE4', 'Final'];
+  for (const ex of exams) {
+    const list = ALL_EXAM_SLOS[ex];
+    if (list) {
+      const match = list.find((s) => s.text.trim().toLowerCase() === sloText.trim().toLowerCase());
+      if (match) return match.chapter;
+    }
+  }
+
+  const haps = findHapsCorrelation(sloText);
+  return haps.chapter || 'Chapter 1';
 }
 
 export const ALL_EXAM_SLOS: Record<ExamCategory, SLOItem[]> = {

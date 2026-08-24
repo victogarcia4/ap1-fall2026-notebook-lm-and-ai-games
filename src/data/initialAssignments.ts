@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v6';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v6';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v6';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v8';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v8';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v8';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -72,6 +72,7 @@ export function generateInitialAssignments(): Assignment[] {
         sloText: slo.text,
         hapsCode: slo.hapsCode,
         hapsNominal: slo.hapsNominal,
+        chapter: slo.chapter,
         notebookUrl,
         notebookNotes,
         deliverables: notebookUrl ? {

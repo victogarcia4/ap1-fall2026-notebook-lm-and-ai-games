@@ -26,7 +26,7 @@ export interface SLOItem {
   hapsCode: string;
   hapsNominal: string;
   hapsModule: string;
-  chapter?: string;
+  chapter: string;
   keywords?: string[];
 }
 
@@ -48,6 +48,7 @@ export interface Assignment {
   sloText: string;
   hapsCode: string;
   hapsNominal: string;
+  chapter?: string;
   notebookUrl?: string;
   notebookNotes?: string;
   deliverables?: AssignmentDeliverables;

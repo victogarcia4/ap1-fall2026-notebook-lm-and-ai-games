@@ -13,6 +13,7 @@ import {
   Layers 
 } from 'lucide-react';
 import { Assignment, AssignmentDeliverables } from '../types';
+import { getSloChapter } from '../data/examSlos';
 
 interface SubmissionModalProps {
   assignment: Assignment | null;
@@ -110,12 +111,22 @@ export const SubmissionModal: React.FC<SubmissionModalProps> = ({
         </div>
 
         {/* SLO Info Card */}
-        <div className="bg-paper-2 p-3.5 rounded-2xl border border-line mb-4 text-xs space-y-1">
-          <div className="flex items-center justify-between text-[11px] font-mono">
-            <span className="font-bold text-ink">{assignment.exam} Assignment</span>
+        <div className="bg-paper-2 p-3.5 rounded-2xl border border-line mb-4 text-xs space-y-1.5">
+          <div className="flex items-center justify-between text-[11px] font-mono flex-wrap gap-1.5">
+            <div className="flex items-center gap-1.5">
+              <span className="font-bold text-ink">{assignment.exam} Assignment</span>
+              <span className="pill text-[10px] font-mono font-bold bg-amber-500/15 text-amber-900 border border-amber-500/30 px-1.5 py-0.5">
+                {assignment.chapter || getSloChapter(assignment.sloText, assignment.exam)}
+              </span>
+            </div>
             <span className="pill acid text-[10px] font-bold">{assignment.hapsCode}</span>
           </div>
           <p className="text-ink font-medium">"{assignment.sloText}"</p>
+          <p className="text-[11px] text-muted italic">
+            <span className="font-semibold text-ink/75 font-mono not-italic">{assignment.chapter || getSloChapter(assignment.sloText, assignment.exam)}</span>
+            <span className="mx-1.5 text-muted/50">•</span>
+            <span>Nominal: {assignment.hapsNominal}</span>
+          </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">

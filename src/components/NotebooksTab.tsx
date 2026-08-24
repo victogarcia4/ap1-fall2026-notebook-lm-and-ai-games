@@ -24,7 +24,7 @@ import {
   Layers
 } from 'lucide-react';
 import { Assignment, ExamCategory, Student } from '../types';
-import { getExamFullName } from '../data/examSlos';
+import { getExamFullName, getSloChapter } from '../data/examSlos';
 import { generateNotebookLMPrompt, generateAIGamePrompt } from '../utils/helpers';
 
 interface NotebooksTabProps {
@@ -280,9 +280,14 @@ export const NotebooksTab: React.FC<NotebooksTabProps> = ({
 
                 {/* Assigned SLO Box */}
                 <div className="p-3 rounded-xl bg-paper-2 border border-line space-y-1.5">
-                  <div className="flex items-center justify-between text-[11px]">
-                    <span className="pill acid text-[10px] font-mono font-bold">{assignment.hapsCode}</span>
-                    <span className="text-[10px] text-muted italic truncate max-w-[150px]">
+                  <div className="flex items-center justify-between text-[11px] flex-wrap gap-1">
+                    <div className="flex items-center gap-1.5">
+                      <span className="pill acid text-[10px] font-mono font-bold">{assignment.hapsCode}</span>
+                      <span className="pill text-[10px] font-mono font-bold bg-amber-500/15 text-amber-900 border border-amber-500/30 px-1.5 py-0.5">
+                        {assignment.chapter || getSloChapter(assignment.sloText, assignment.exam)}
+                      </span>
+                    </div>
+                    <span className="text-[10px] text-muted italic truncate max-w-[130px]">
                       {assignment.hapsNominal}
                     </span>
                   </div>

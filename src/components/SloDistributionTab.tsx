@@ -20,7 +20,7 @@ import {
   UserCheck
 } from 'lucide-react';
 import { Assignment, ExamCategory, Student, SLOItem } from '../types';
-import { ALL_EXAM_SLOS, getExamFullName } from '../data/examSlos';
+import { ALL_EXAM_SLOS, getExamFullName, getSloChapter } from '../data/examSlos';
 import { generateNotebookLMPrompt, generateAIGamePrompt, exportToCSV } from '../utils/helpers';
 
 interface SloDistributionTabProps {
@@ -255,9 +255,14 @@ export const SloDistributionTab: React.FC<SloDistributionTabProps> = ({
                     className="p-3.5 rounded-xl bg-paper-2 border border-line hover:border-ink transition space-y-2"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="pill lecture-exam text-[10px]">
-                        {res.exam} ({getExamFullName(res.exam).split('(')[0]})
-                      </span>
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        <span className="pill lecture-exam text-[10px]">
+                          {res.exam} ({getExamFullName(res.exam).split('(')[0]})
+                        </span>
+                        <span className="pill text-[10px] font-mono font-bold bg-amber-500/15 text-amber-900 border border-amber-500/30">
+                          {res.chapter || getSloChapter(res.sloText, res.exam)}
+                        </span>
+                      </div>
                       <span className="pill text-[10px] font-mono">
                         {res.hapsCode}
                       </span>
@@ -499,11 +504,18 @@ export const SloDistributionTab: React.FC<SloDistributionTabProps> = ({
 
                       {/* SLO Text */}
                       <td className="py-3 px-4 max-w-md">
+                        <div className="flex items-center gap-1.5 mb-1.5 flex-wrap">
+                          <span className="pill text-[10px] font-mono font-bold bg-amber-500/15 text-amber-900 border border-amber-500/30 px-2 py-0.5">
+                            {item.chapter || getSloChapter(item.sloText, item.exam)}
+                          </span>
+                        </div>
                         <p className="font-medium text-ink line-clamp-2 leading-relaxed">
                           {item.sloText}
                         </p>
                         <p className="text-[11px] text-muted mt-1 italic line-clamp-1">
-                          Nominal: {item.hapsNominal}
+                          <span className="font-semibold text-ink/75 font-mono not-italic">{item.chapter || getSloChapter(item.sloText, item.exam)}</span>
+                          <span className="mx-1.5 text-muted/50">•</span>
+                          <span>Nominal: {item.hapsNominal}</span>
                         </p>
                       </td>
 
@@ -617,7 +629,19 @@ export const SloDistributionTab: React.FC<SloDistributionTabProps> = ({
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-3 gap-3">
+              <div>
+                <label className="block text-xs font-bold font-mono text-ink mb-1">Chapter</label>
+                <input
+                  type="text"
+                  value={editingAssignment.chapter || getSloChapter(editingAssignment.sloText, editingAssignment.exam)}
+                  onChange={(e) =>
+                    setEditingAssignment({ ...editingAssignment, chapter: e.target.value })
+                  }
+                  placeholder="e.g. Chapter 1"
+                  className="w-full px-3 py-2 rounded-xl bg-paper-2 border border-line text-xs text-ink font-mono"
+                />
+              </div>
               <div>
                 <label className="block text-xs font-bold font-mono text-ink mb-1">HAPS Code</label>
                 <input
@@ -761,7 +785,7 @@ export const SloDistributionTab: React.FC<SloDistributionTabProps> = ({
               >
                 {ALL_EXAM_SLOS[newExam]?.map((s, idx) => (
                   <option key={s.id} value={idx}>
-                    #{idx + 1}: [{s.hapsCode}] {s.text.slice(0, 65)}...
+                    #{idx + 1}: [{s.chapter}] [{s.hapsCode}] {s.text.slice(0, 60)}...
                   </option>
                 ))}
               </select>
@@ -792,6 +816,7 @@ export const SloDistributionTab: React.FC<SloDistributionTabProps> = ({
                     sloText: slo.text,
                     hapsCode: slo.hapsCode,
                     hapsNominal: slo.hapsNominal,
+                    chapter: slo.chapter,
                     status: 'assigned',
                     updatedAt: new Date().toISOString().split('T')[0],
                   };
