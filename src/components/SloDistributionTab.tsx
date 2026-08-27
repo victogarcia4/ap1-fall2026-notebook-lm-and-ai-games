@@ -339,7 +339,6 @@ export const SloDistributionTab: React.FC<SloDistributionTabProps> = ({
               <option value="1201">Section 1201</option>
               <option value="1501">Section 1501</option>
               <option value="Instructor">Instructor (Dr. Garcia)</option>
-              <option value="Mock">Mock Students</option>
             </select>
 
             {/* Status Selector */}

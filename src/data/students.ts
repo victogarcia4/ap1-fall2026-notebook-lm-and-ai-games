@@ -65,27 +65,21 @@ export const INITIAL_STUDENTS: Student[] = [
   { id: '7590906', name: 'Villasana, Sergio', section: '1201' },
   { id: '8063449', name: 'Wolford, Hannah', section: '1201' },
 
-  // Section 1501 (10 Students)
+  // Section 1501 (16 Students)
   { id: '7996309', name: 'Alvarez, Alexa Michelle', section: '1501' },
   { id: '7889750', name: 'Battaglia, Lilli Rae', section: '1501' },
+  { id: '8159253', name: 'Bell, Cyaira', section: '1501' },
   { id: '7989701', name: 'Bussey, Leslie Ann', section: '1501' },
   { id: '8035519', name: 'Carrizalez, Dulce Maria', section: '1501' },
   { id: '7959119', name: 'Davis, Dana Yvette', section: '1501' },
   { id: '7356820', name: 'Gentry, Quincy Jerrod', section: '1501' },
+  { id: '7939128', name: 'Gonzalez Perez, Ana Rosa', section: '1501' },
+  { id: '7764134', name: 'Gonzalez, Anned Abigail', section: '1501' },
   { id: '7772582', name: 'Granados, Kayla Yaretzy', section: '1501' },
-  { id: '8157078', name: 'Mcintosh, Fatinah Aminah', section: '1501' },
+  { id: '8157078', name: 'Mcintosh, Fatinah Mcintosh Aminah', section: '1501' },
   { id: '7826640', name: 'Quintanilla, Ellyannie', section: '1501' },
   { id: '8036488', name: 'Richard, Alayzia', section: '1501' },
-
-  // 10 Mock Students
-  { id: '1111111', name: 'Student 1', section: '1201', isMock: true },
-  { id: '2222222', name: 'Student 2', section: '1201', isMock: true },
-  { id: '3333333', name: 'Student 3', section: '1201', isMock: true },
-  { id: '4444444', name: 'Student 4', section: '1501', isMock: true },
-  { id: '5555555', name: 'Student 5', section: '1501', isMock: true },
-  { id: '6666666', name: 'Student 6', section: '1501', isMock: true },
-  { id: '7777777', name: 'Student 7', section: '1501', isMock: true },
-  { id: '8888888', name: 'Student 8', section: 'Mock', isMock: true },
-  { id: '9999999', name: 'Student 9', section: 'Mock', isMock: true },
-  { id: '1010101', name: 'Student 10', section: 'Mock', isMock: true },
+  { id: '7332513', name: 'Sisavath, Steven Lucky', section: '1501' },
+  { id: '8028028', name: 'Turrubiartes, Miley', section: '1501' },
+  { id: '8002796', name: 'Williams, Asia Amyrie', section: '1501' },
 ];

@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v8';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v8';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v8';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v9';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v9';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v9';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -32,7 +32,7 @@ export function generateInitialAssignments(): Assignment[] {
 
       const assignmentId = `${exam}-${student.id}`;
 
-      // Sample mock submissions for showcase
+      // Sample submissions for showcase
       let status: Assignment['status'] = 'assigned';
       let notebookUrl: string | undefined = undefined;
       let notebookNotes: string | undefined = undefined;
@@ -41,7 +41,7 @@ export function generateInitialAssignments(): Assignment[] {
       let grade: string | undefined = undefined;
       let feedback: string | undefined = undefined;
 
-      // Give Dr. Victor Garcia M and Mock Student 1 ready-made demo submissions
+      // Give Dr. Victor Garcia M and Alexa Michelle Alvarez ready-made demo submissions
       if (student.isInstructor) {
         status = 'reviewed';
         notebookUrl = 'https://notebooklm.google.com/notebook/demo-ap1-instructor';
@@ -52,12 +52,12 @@ export function generateInitialAssignments(): Assignment[] {
         }
         grade = '100 / 100 (Exemplar)';
         feedback = 'Master model assignment. Audio, video shorts, slide deck, infographic, and flashcard set complete.';
-      } else if (student.id === '1111111') { // Student 1
+      } else if (student.id === '7996309') { // Alvarez, Alexa Michelle (Section 1501)
         status = 'submitted';
-        notebookUrl = 'https://notebooklm.google.com/notebook/student1-ap1-submission';
+        notebookUrl = 'https://notebooklm.google.com/notebook/alexa-ap1-submission';
         notebookNotes = 'Completed all 5 assets: Audio deep-dive, 60s video short script, slide deck, infographic map, and flashcard set.';
         if (exam === 'Final') {
-          gameUrl = 'https://aistudio.google.com/game/student1-cell-division-arcade';
+          gameUrl = 'https://aistudio.google.com/game/alexa-cell-division-arcade';
           gameTitle = 'Cell Division & Mitosis Arcade Quest';
         }
       }
@@ -130,9 +130,9 @@ export function generateInitialAIGames(): AIGameData[] {
     },
     {
       id: 'game-demo-2',
-      studentId: '1111111',
-      studentName: 'Student 1',
-      studentSection: '1201',
+      studentId: '7996309',
+      studentName: 'Alvarez, Alexa Michelle',
+      studentSection: '1501',
       sloText: 'Explain how a cell divides.',
       hapsCode: 'AP-19-C-13-01',
       hapsNominal: 'Cell cycle phases & mitosis',
