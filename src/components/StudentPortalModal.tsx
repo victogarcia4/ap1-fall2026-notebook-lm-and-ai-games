@@ -209,16 +209,38 @@ export const StudentPortalModal: React.FC<StudentPortalModalProps> = ({
                       </div>
                     )}
 
+                    {/* Attached Notebook or Game direct access */}
                     {a.notebookUrl && (
                       <div className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-[11px] flex items-center justify-between text-emerald-950 font-medium">
-                        <span>Notebook Link: {a.notebookUrl.slice(0, 35)}...</span>
+                        <span className="flex items-center gap-1.5">
+                          <BookOpen className="w-3.5 h-3.5 text-emerald-700" />
+                          <span>NotebookLM: {a.notebookUrl.slice(0, 32)}...</span>
+                        </span>
                         <a
                           href={a.notebookUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-ink font-bold hover:underline flex items-center gap-0.5 font-mono"
+                          className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-emerald-600/15 hover:bg-emerald-600/25 text-emerald-900 font-bold font-mono text-[10px]"
                         >
-                          <span>Open</span>
+                          <span>Read Notebook</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </div>
+                    )}
+
+                    {a.gameUrl && (
+                      <div className="p-2 rounded-lg bg-amber-500/15 border border-amber-500/30 text-[11px] flex items-center justify-between text-amber-950 font-medium">
+                        <span className="flex items-center gap-1.5 truncate pr-2">
+                          <Gamepad2 className="w-3.5 h-3.5 text-amber-700 shrink-0" />
+                          <span className="truncate">Game: {a.gameTitle || 'AI Studio Game'}</span>
+                        </span>
+                        <a
+                          href={a.gameUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-950 font-bold font-mono text-[10px] whitespace-nowrap"
+                        >
+                          <span>Play Game</span>
                           <ExternalLink className="w-3 h-3" />
                         </a>
                       </div>

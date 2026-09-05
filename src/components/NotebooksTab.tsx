@@ -18,6 +18,7 @@ import {
   ShieldCheck,
   Share2,
   FolderOpen,
+  Gamepad2,
   Video,
   Presentation,
   Image as ImageIcon,
@@ -428,12 +429,43 @@ export const NotebooksTab: React.FC<NotebooksTabProps> = ({
                   )}
                 </button>
 
-                <div className="flex items-center space-x-1.5">
+                <div className="flex items-center space-x-1.5 flex-wrap gap-y-1">
+                  {/* DIRECT ACCESS: Read NotebookLM Notebook (without viewing submission page) */}
+                  {assignment.notebookUrl && (
+                    <a
+                      href={assignment.notebookUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 py-1 px-2.5 rounded-lg bg-emerald-600/10 hover:bg-emerald-600/20 text-emerald-900 border border-emerald-600/30 text-xs font-bold font-mono transition shadow-none"
+                      title={`Direct access: Read Notebook for ${assignment.studentName}`}
+                    >
+                      <FolderOpen className="w-3.5 h-3.5 text-emerald-700" />
+                      <span>Read Notebook</span>
+                      <ExternalLink className="w-2.5 h-2.5 opacity-70" />
+                    </a>
+                  )}
+
+                  {/* DIRECT ACCESS: Play AI Studio Game (without viewing submission page) */}
+                  {assignment.gameUrl && (
+                    <a
+                      href={assignment.gameUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 py-1 px-2.5 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 text-amber-950 border border-amber-500/40 text-xs font-bold font-mono transition shadow-none"
+                      title={`Direct access: Play ${assignment.gameTitle || 'AI Game'} by ${assignment.studentName}`}
+                    >
+                      <Gamepad2 className="w-3.5 h-3.5 text-amber-700" />
+                      <span>Play Game</span>
+                      <ExternalLink className="w-2.5 h-2.5 opacity-70" />
+                    </a>
+                  )}
+
                   <button
                     onClick={() => onOpenSubmissionModal(assignment)}
                     className="btn-primary py-1 px-3 text-xs"
+                    title="Open submission details dialog"
                   >
-                    {isSubmitted ? 'Edit' : 'Submit'}
+                    {isSubmitted ? 'Details' : 'Submit'}
                   </button>
 
                   {/* Owner Controls */}
