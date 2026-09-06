@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v15';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v15';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v15';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v17';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v17';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v17';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -214,7 +214,7 @@ export function generateInitialAssignments(): Assignment[] {
         } else if (exam === 'LE3') {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/d282bee6-01e7-4c4e-a22f-9be414365da4';
-          notebookNotes = 'Cellular and extracellular matrix components of bone tissue.';
+          notebookNotes = 'Cellular and extracellular matrix components of bone tissue (osteoprogenitor cells, osteoblasts, osteocytes, osteoclasts).';
         } else if (exam === 'LE4') {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/b4f37aa0-befc-4d1f-b7f5-8a01e4145299';
@@ -249,6 +249,14 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/c2bf31ab-2eb4-49a2-81a0-9f9aebf91830';
           notebookNotes = 'Structural components of the neuromuscular junction (NMJ) and synaptic transmission in muscle action potentials.';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/142803a8-f81f-4ec0-99dd-95b521684958';
+          notebookNotes = 'Differentiate between general (somatic and visceral) senses and special senses (vision, hearing, equilibrium, olfaction, gustation).';
+        } else if (exam === 'Final') {
+          status = 'submitted';
+          gameUrl = 'https://homeosync-a-p-i-homeostasis-synthesis-game.ai.studio/';
+          gameTitle = 'HomeoSync v1.0: Cybernetic Homeostasis & Cross-System Synthesis';
         }
       }
 
@@ -527,6 +535,46 @@ export function generateInitialAIGames(): AIGameData[] {
           options: ['Molecular oxygen (O₂)', 'Cytochrome c', 'Ubiquinone (CoQ)', 'Carbon dioxide (CO₂)'],
           correctIndex: 0,
           explanation: 'Molecular oxygen serves as the terminal electron acceptor, accepting electrons and protons to form metabolic water (H₂O).',
+        },
+      ],
+    },
+    {
+      id: 'game-hannah-wolford',
+      studentId: '8063449',
+      studentName: 'Wolford, Hannah',
+      studentSection: '1201',
+      sloText: 'Synthesize the fundamental homeostatic mechanisms that unify all organ systems in Human Anatomy & Physiology I.',
+      hapsCode: 'AP-19-A-07-01',
+      hapsNominal: 'Organ systems and components',
+      gameTitle: 'HomeoSync v1.0: Cybernetic Homeostasis & Cross-System Synthesis',
+      gameType: 'clinical-scenario',
+      aiStudioUrl: 'https://homeosync-a-p-i-homeostasis-synthesis-game.ai.studio/',
+      geminiPrompt: 'Design a cybernetic homeostasis simulation game connecting nervous, endocrine, musculoskeletal, and sensory organ systems in A&P I.',
+      status: 'submitted',
+      extraCreditScore: 100,
+      submittedAt: '2026-09-06',
+      questions: [
+        {
+          question: 'In a complex cybernetic feedback loop maintaining arterial blood pressure, which sensor-effector pathway provides rapid compensatory response to sudden orthostatic hypotension?',
+          options: [
+            'Arterial baroreceptor reflex triggering sympathetic vasoconstriction and tachycardia',
+            'Renin-angiotensin-aldosterone axis promoting renal sodium retention',
+            'Atrial natriuretic peptide (ANP) release causing systemic vasodilation',
+            'Hypothalamic osmoreceptor stimulation of antidiuretic hormone (ADH) secretion'
+          ],
+          correctIndex: 0,
+          explanation: 'Arterial baroreceptors in the carotid sinus and aortic arch detect acute drops in stretch, rapidly increasing sympathetic output to restore blood pressure within seconds.',
+        },
+        {
+          question: 'How do negative feedback loops ensure physiological stability across interconnected organ systems?',
+          options: [
+            'By sensing deviations from a set point and initiating effector responses that counteract the initial stimulus',
+            'By amplifying the initial perturbation to accelerate physiological change until a climatic event occurs',
+            'By isolating individual organ systems to operate without neural or humoral communication',
+            'By maintaining constant, unchangeable internal variables without any biological fluctuation'
+          ],
+          correctIndex: 0,
+          explanation: 'Negative feedback mechanisms detect shifts away from homeostatic set points and mobilize effectors to oppose the stimulus, preserving dynamic equilibrium across organ systems.',
         },
       ],
     },
