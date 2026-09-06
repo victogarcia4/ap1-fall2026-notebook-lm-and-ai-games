@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v13';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v13';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v13';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v15';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v15';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v15';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -235,6 +235,20 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/acf49af3-8e45-48aa-90de-a9182daa03d7';
           notebookNotes = 'Physiologically important properties of water: solvency, thermal stability, reactivity, and lubrication.';
+        }
+      } else if (student.id === '8063449') { // Wolford, Hannah (Section 1201)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/d8750931-4dbc-483a-b9d2-c8bb7e71376f';
+          notebookNotes = 'Phases of the cell cycle: Interphase (G1, S, G2) and M phase (Mitosis and Cytokinesis).';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/64836699-8619-4b3b-a178-56c2bd9882d1';
+          notebookNotes = 'Thermoregulation and water conservation via integumentary dermal blood flow and sweat mechanisms.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/c2bf31ab-2eb4-49a2-81a0-9f9aebf91830';
+          notebookNotes = 'Structural components of the neuromuscular junction (NMJ) and synaptic transmission in muscle action potentials.';
         }
       }
 
