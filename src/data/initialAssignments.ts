@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v12';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v12';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v12';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v13';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v13';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v13';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -229,6 +229,12 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/f7ccec1d-134f-4488-9956-395c6b5cc0c1';
           notebookNotes = 'Intramembranous vs. Endochondral ossification bone formation comparison.';
+        }
+      } else if (student.id === '7826640') { // Quintanilla, Ellyannie (Section 1501)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/acf49af3-8e45-48aa-90de-a9182daa03d7';
+          notebookNotes = 'Physiologically important properties of water: solvency, thermal stability, reactivity, and lubrication.';
         }
       }
 
