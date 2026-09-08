@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v17';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v17';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v17';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v18';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v18';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v18';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -143,6 +143,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/e3f9c697-3f97-4624-b270-bc8b5fcbb182';
           notebookNotes = 'Microscopic components within a skeletal muscle fiber.';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/244ad57a-3747-4b08-82fc-bb2a6ddd6499?pli=1';
+          notebookNotes = 'Distinguish between the sympathetic and parasympathetic divisions of the autonomic nervous system in structural origin, pathway lengths, and bodily functions.';
         }
       } else if (student.id === '8035971') { // Moran, Angel Adrian (Section 1201)
         if (exam === 'LE1') {
@@ -257,6 +261,12 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           gameUrl = 'https://homeosync-a-p-i-homeostasis-synthesis-game.ai.studio/';
           gameTitle = 'HomeoSync v1.0: Cybernetic Homeostasis & Cross-System Synthesis';
+        }
+      } else if (student.id === '7764134') { // Gonzalez, Anned Abigail (Section 1501)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/ada491dd-74c1-4603-9789-6184106d1a25';
+          notebookNotes = 'Define the law of mass balance and relate it to physiological homeostasis.';
         }
       }
 
