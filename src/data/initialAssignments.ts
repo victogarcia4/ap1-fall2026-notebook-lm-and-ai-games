@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v18';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v18';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v18';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v19';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v19';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v19';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -185,8 +185,12 @@ export function generateInitialAssignments(): Assignment[] {
           notebookNotes = 'Organization of skeletal muscle from deep fascia to myofibril.';
         } else if (exam === 'LE4') {
           status = 'submitted';
-          notebookUrl = 'https://notebook.google.com/notebook/5baa746b-2595-4c57-87c1-da053403b64b';
-          notebookNotes = 'Spinal nerve formation, naming conventions, and plexus organization.';
+          notebookUrl = 'https://notebook.google.com/notebook/580911d5-d42a-4f29-bce3-7f6ecf8da6c4';
+          notebookNotes = 'Explain how spinal nerves are formed, named, and organized into principal nerve plexuses (cervical, brachial, lumbar, sacral).';
+        } else if (exam === 'Final') {
+          status = 'submitted';
+          gameUrl = 'https://aistudio.google.com/apps/80622894-1040-46af-b376-6778cdfe8de3?showAssistant=true&showPreview=true&fullscreenApplet=true';
+          gameTitle = 'NeuroPathways: Somatic & Autonomic Nervous Systems Quest';
         }
       } else if (student.id === '8029974') { // Ponce, Jaslen (Section 1201)
         if (exam === 'LE1') {
@@ -267,6 +271,28 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/ada491dd-74c1-4603-9789-6184106d1a25';
           notebookNotes = 'Define the law of mass balance and relate it to physiological homeostasis.';
+        }
+      } else if (student.id === '8094555') { // Regalado, Mia Pamela (Section 1201)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/69e840e0-67dd-4efe-9add-01303449dffd';
+          notebookNotes = 'Explain the four levels of protein structure (primary, secondary, tertiary, quaternary) and the consequences of denaturation.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/d47467e3-f35d-476b-a2fc-1150a605e06c';
+          notebookNotes = 'Compare and contrast intercellular junctions: tight junctions, desmosomes, and gap junctions.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/5d2650a3-3431-44d1-adf2-ced4ca5c798e';
+          notebookNotes = 'Identify and describe the major structural components of a typical synovial joint (articular capsule, synovial fluid, ligaments, articular discs, bursae).';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/cd828f92-0b6e-4cbc-aacd-e11c163f46c2?original_referer=https:%2F%2Fnotebook.google.com%23';
+          notebookNotes = 'Describe the structural organization, anatomical landmarks, and functions of the four major brain regions (cerebrum, diencephalon, brainstem, cerebellum).';
+        } else if (exam === 'Final') {
+          status = 'submitted';
+          gameUrl = 'https://aistudio.google.com/apps/5ed18507-22ed-463a-b7f4-6b67a2e8498c?fullscreenApplet=true&showAssistant=true&showPreview=true';
+          gameTitle = 'Tissue Matrix: Integumentary & Musculoskeletal A&P Game';
         }
       }
 
@@ -585,6 +611,86 @@ export function generateInitialAIGames(): AIGameData[] {
           ],
           correctIndex: 0,
           explanation: 'Negative feedback mechanisms detect shifts away from homeostatic set points and mobilize effectors to oppose the stimulus, preserving dynamic equilibrium across organ systems.',
+        },
+      ],
+    },
+    {
+      id: 'game-mia-regalado',
+      studentId: '8094555',
+      studentName: 'Regalado, Mia Pamela',
+      studentSection: '1201',
+      sloText: 'Compare and contrast how the four primary tissue types contribute to the structure and function of the integumentary and musculoskeletal systems (Chapters 5–9).',
+      hapsCode: 'AP-19-D-01-03',
+      hapsNominal: 'General features of tissue types',
+      gameTitle: 'Tissue Matrix: Integumentary & Musculoskeletal A&P Game',
+      gameType: 'clinical-scenario',
+      aiStudioUrl: 'https://aistudio.google.com/apps/5ed18507-22ed-463a-b7f4-6b67a2e8498c?fullscreenApplet=true&showAssistant=true&showPreview=true',
+      geminiPrompt: 'Develop an interactive histology and anatomical synthesis game exploring how epithelial, connective, muscle, and nervous tissues integrate across the integumentary and musculoskeletal systems.',
+      status: 'submitted',
+      extraCreditScore: 100,
+      submittedAt: '2026-09-08',
+      questions: [
+        {
+          question: 'Which primary tissue type provides high tensile strength in tendons, connects bone to bone in ligaments, and forms the reticular dermis?',
+          options: [
+            'Dense regular and irregular connective tissue',
+            'Stratified squamous keratinized epithelium',
+            'Smooth muscle tissue with intercalated discs',
+            'Pseudostratified ciliated columnar tissue'
+          ],
+          correctIndex: 0,
+          explanation: 'Dense regular connective tissue forms tendons and ligaments, while dense irregular connective tissue provides multidirectional tensile strength in the dermis.',
+        },
+        {
+          question: 'In skeletal muscle hierarchical organization, which connective tissue wrapping surrounds individual muscle fascicles?',
+          options: [
+            'Perimysium',
+            'Epimysium',
+            'Endomysium',
+            'Hypodermis'
+          ],
+          correctIndex: 0,
+          explanation: 'The perimysium surrounds and bundles individual muscle fibers into functional units called fascicles.',
+        },
+      ],
+    },
+    {
+      id: 'game-jessica-tutor',
+      studentId: '7123232',
+      studentName: 'Tutor, Jessica Renee',
+      studentSection: '1201',
+      sloText: 'Compare and contrast the somatic motor nervous system and autonomic nervous system in target tissues, pathways, and neurochemistry (Chapters 11 & 12).',
+      hapsCode: 'AP-19-H-02-03',
+      hapsNominal: 'Nervous system response to stimuli',
+      gameTitle: 'NeuroPathways: Somatic & Autonomic Nervous Systems Quest',
+      gameType: 'rapid-recall',
+      aiStudioUrl: 'https://aistudio.google.com/apps/80622894-1040-46af-b376-6778cdfe8de3?showAssistant=true&showPreview=true&fullscreenApplet=true',
+      geminiPrompt: 'Design an interactive neurobiology game contrasting somatic motor efferents and autonomic two-neuron pathways, neurotransmitters, and receptor mechanisms.',
+      status: 'submitted',
+      extraCreditScore: 100,
+      submittedAt: '2026-09-08',
+      questions: [
+        {
+          question: 'How do somatic motor pathways differ structurally from autonomic efferent pathways?',
+          options: [
+            'Somatic motor pathways use a single lower motor neuron extending from CNS directly to skeletal muscle, while autonomic pathways utilize a two-neuron chain (preganglionic and postganglionic)',
+            'Somatic pathways always synapse in sympathetic chain ganglia before reaching involuntary smooth muscle',
+            'Autonomic pathways only utilize unmyelinated fibers with voluntary conscious control',
+            'Somatic pathways release norepinephrine onto muscarinic cholinergic receptors'
+          ],
+          correctIndex: 0,
+          explanation: 'Somatic motor pathways have a single heavily myelinated axon reaching directly to skeletal muscle, whereas autonomic pathways require preganglionic and postganglionic neurons in series.',
+        },
+        {
+          question: 'Which neurotransmitter is universally released by all preganglionic autonomic neurons and all somatic motor neurons?',
+          options: [
+            'Acetylcholine (ACh)',
+            'Norepinephrine (NE)',
+            'Epinephrine',
+            'Dopamine'
+          ],
+          correctIndex: 0,
+          explanation: 'Acetylcholine (ACh) is universally released by somatic motor neurons and preganglionic neurons of both sympathetic and parasympathetic divisions, binding to nicotinic cholinergic receptors.',
         },
       ],
     },
