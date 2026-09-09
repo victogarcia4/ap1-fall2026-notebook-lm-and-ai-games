@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v21';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v21';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v21';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v23';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v23';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v23';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -75,6 +75,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/ce76579d-98a9-47a4-b0cb-d7b052f4c54a';
           notebookNotes = 'Delivered LE1 NotebookLM: Homeostatic Mechanisms, feedback loops, and anatomical regulation. Includes audio deep-dive, summary deck, and study flashcards.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/c409ba9d-2574-4bce-9ee9-61645e05235f';
+          notebookNotes = 'Explain how carbohydrates, lipids, and proteins are utilized in metabolic energy pathways.';
         } else if (exam === 'Final') {
           status = 'submitted';
           gameUrl = 'https://aistudio.google.com/apps/44115d52-f410-474b-a899-166bb751cbf8?showAssistant=true&showPreview=true&fullscreenApplet=true';
@@ -89,6 +93,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/b3b9d6d4-584f-4730-bdf2-bdb67ccf4f2c';
           notebookNotes = 'Cellular Respiration Phases: Glycolysis, Krebs Cycle & Oxidative Phosphorylation.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/96ad144a-fd00-4e0b-b23c-5dc46908a58d';
+          notebookNotes = 'Identify the microscopic structure of compact bone (osteons, concentric lamellae, central canal, canaliculi, lacunae) and spongy bone (trabeculae).';
         } else if (exam === 'LE4') {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/eaa62c4a-3327-4afe-8931-3c2656643687';
@@ -303,6 +311,12 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/8636de56-7548-41db-86b5-a17039252e7d';
           notebookNotes = 'Explain the phases of the cell cycle (Interphase: G1, S, G2, and M phase).';
+        }
+      } else if (student.id === '7922888') { // Cruz, Katherine (Section 1101)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/08d433f3-45c7-40c0-9d3a-3a86da225d55';
+          notebookNotes = 'Compare and contrast positive and negative feedback mechanisms, providing physiological examples of each.';
         }
       }
 
