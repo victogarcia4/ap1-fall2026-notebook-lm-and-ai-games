@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v24';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v24';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v24';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v25';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v25';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v25';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -325,6 +325,16 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/08d433f3-45c7-40c0-9d3a-3a86da225d55';
           notebookNotes = 'Compare and contrast positive and negative feedback mechanisms, providing physiological examples of each.';
+        }
+      } else if (student.id === '7869456') { // Argueta, Dayami (Section 1201)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/9c8164ba-b12d-4f40-95f9-ae0abb37c890?pli=1';
+          notebookNotes = 'Describe the human body in anatomical position and apply directional terms correctly.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/93ef6852-3945-45af-bbd7-2c10fc9713de';
+          notebookNotes = 'Compare and contrast anabolism and catabolism in cellular metabolism.';
         }
       }
 
