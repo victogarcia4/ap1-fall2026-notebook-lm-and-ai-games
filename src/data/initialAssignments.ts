@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v19';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v19';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v19';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v20';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v20';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v20';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -293,6 +293,12 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           gameUrl = 'https://aistudio.google.com/apps/5ed18507-22ed-463a-b7f4-6b67a2e8498c?fullscreenApplet=true&showAssistant=true&showPreview=true';
           gameTitle = 'Tissue Matrix: Integumentary & Musculoskeletal A&P Game';
+        }
+      } else if (student.id === '7659964') { // Siharath, Connie (Section 1101)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/8636de56-7548-41db-86b5-a17039252e7d';
+          notebookNotes = 'Explain the phases of the cell cycle (Interphase: G1, S, G2, and M phase).';
         }
       }
 
