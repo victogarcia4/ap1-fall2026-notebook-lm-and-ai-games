@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v23';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v23';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v23';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v24';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v24';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v24';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -79,6 +79,14 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/c409ba9d-2574-4bce-9ee9-61645e05235f';
           notebookNotes = 'Explain how carbohydrates, lipids, and proteins are utilized in metabolic energy pathways.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/1389780e-7789-40e6-8e88-dfa9f40bec16';
+          notebookNotes = 'Compare and contrast intramembranous ossification and endochondral (intracartilaginous) bone formation.';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/9b905cc8-8128-46ba-ad2c-e6f3e2b327d4';
+          notebookNotes = 'Distinguish between the anatomical composition and arrangement of white matter and gray matter in the nervous system.';
         } else if (exam === 'Final') {
           status = 'submitted';
           gameUrl = 'https://aistudio.google.com/apps/44115d52-f410-474b-a899-166bb751cbf8?showAssistant=true&showPreview=true&fullscreenApplet=true';
