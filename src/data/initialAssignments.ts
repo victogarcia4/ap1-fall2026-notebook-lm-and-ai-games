@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v20';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v20';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v20';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v21';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v21';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v21';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -129,6 +129,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/82978b28-56c6-4698-8408-5b4d12efa61e';
           notebookNotes = 'Integumentary system general functions and physiological defense.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/8750c319-86d6-41a3-9134-9e18e6d4cb92';
+          notebookNotes = 'Predict the pathophysiological changes and consequences of joint disorders such as osteoarthritis and rheumatoid arthritis.';
         }
       } else if (student.id === '7778338') { // Velazquez, Yesenia (Section 1201)
         if (exam === 'LE1') {
