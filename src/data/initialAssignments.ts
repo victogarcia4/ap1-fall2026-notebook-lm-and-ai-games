@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v25';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v25';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v25';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v26';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v26';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v26';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -335,6 +335,26 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/93ef6852-3945-45af-bbd7-2c10fc9713de';
           notebookNotes = 'Compare and contrast anabolism and catabolism in cellular metabolism.';
+        }
+      } else if (student.id === '7989701') { // Bussey, Leslie Ann (Section 1501)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/f8693d47-c0a8-4eca-9595-e290499175ed';
+          notebookNotes = 'Describe the major levels of structural organization in the human organism from chemical to organismal.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/817512cb-a5d6-4e16-9f6f-00b2bc27a5c9';
+          notebookNotes = 'Explain the phases of cellular respiration: glycolysis, the citric acid cycle (Krebs cycle), and oxidative phosphorylation.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/0f2333a3-e443-4b6f-b9a1-bace96c8eb1e';
+          notebookNotes = 'Identify the microscopic structure of compact bone (osteons, concentric lamellae, central canal, canaliculi, lacunae) and spongy bone (trabeculae).';
+        }
+      } else if (student.id === '8028028') { // Turrubiartes, Miley (Section 1501)
+        if (exam === 'Final') {
+          status = 'submitted';
+          gameUrl = 'https://aistudio.google.com/apps/3051a604-b1f4-49d9-827d-144b917e9183?fullscreenApplet=true&showAssistant=true&showPreview=true';
+          gameTitle = 'CardioQuest: A&P Heart Flow & Hemodynamics';
         }
       }
 
@@ -733,6 +753,46 @@ export function generateInitialAIGames(): AIGameData[] {
           ],
           correctIndex: 0,
           explanation: 'Acetylcholine (ACh) is universally released by somatic motor neurons and preganglionic neurons of both sympathetic and parasympathetic divisions, binding to nicotinic cholinergic receptors.',
+        },
+      ],
+    },
+    {
+      id: 'game-miley-turrubiartes',
+      studentId: '8028028',
+      studentName: 'Turrubiartes, Miley',
+      studentSection: '1501',
+      sloText: 'Correlate cellular metabolism and respiration pathways with physiological energy demands across active human tissues (Chapter 4).',
+      hapsCode: 'AP-19-O-01-04',
+      hapsNominal: 'Cellular respiration phases and pathways',
+      gameTitle: 'CardioQuest: A&P Heart Flow & Hemodynamics',
+      gameType: 'clinical-scenario',
+      aiStudioUrl: 'https://aistudio.google.com/apps/3051a604-b1f4-49d9-827d-144b917e9183?fullscreenApplet=true&showAssistant=true&showPreview=true',
+      geminiPrompt: 'Design an interactive clinical physiology game challenging students on cardiac blood flow sequence, heart chamber pressures, valve mechanics, and systemic hemodynamics.',
+      status: 'submitted',
+      extraCreditScore: 100,
+      submittedAt: '2026-09-10',
+      questions: [
+        {
+          question: 'Following systemic venous return through the superior and inferior vena cavae, into which heart chamber does deoxygenated blood first enter?',
+          options: [
+            'Right atrium',
+            'Right ventricle',
+            'Left atrium',
+            'Pulmonary trunk'
+          ],
+          correctIndex: 0,
+          explanation: 'Deoxygenated venous blood from systemic circulation enters the right atrium via the superior and inferior vena cavae and coronary sinus.',
+        },
+        {
+          question: 'During ventricular systole, which heart valves are forced open to permit blood ejection into the great vessels?',
+          options: [
+            'Aortic and pulmonary semilunar valves',
+            'Tricuspid and bicuspid (mitral) atrioventricular valves',
+            'Eustachian valve and foramen ovale',
+            'Coronary sinus valve'
+          ],
+          correctIndex: 0,
+          explanation: 'High ventricular pressures overcome systemic arterial backpressure, forcing the aortic and pulmonary semilunar valves open.',
         },
       ],
     },
