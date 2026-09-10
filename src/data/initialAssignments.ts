@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v26';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v26';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v26';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v28';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v28';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v28';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -329,12 +329,20 @@ export function generateInitialAssignments(): Assignment[] {
       } else if (student.id === '7869456') { // Argueta, Dayami (Section 1201)
         if (exam === 'LE1') {
           status = 'submitted';
-          notebookUrl = 'https://notebook.google.com/notebook/9c8164ba-b12d-4f40-95f9-ae0abb37c890?pli=1';
+          notebookUrl = 'https://notebook.google.com/notebook/9c8164ba-b12d-4f40-95f9-ae0abb37c890';
           notebookNotes = 'Describe the human body in anatomical position and apply directional terms correctly.';
         } else if (exam === 'LE2') {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/93ef6852-3945-45af-bbd7-2c10fc9713de';
           notebookNotes = 'Compare and contrast anabolism and catabolism in cellular metabolism.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/3b371091-d3a0-447d-9deb-b589d15dfd6c';
+          notebookNotes = 'Describe the major functions of the skeletal system (support, protection, movement assistance, mineral homeostasis, blood cell production, triglyceride storage).';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/6f64e359-bd56-4869-bdcf-493c68c409b3';
+          notebookNotes = 'Describe the general functions (sensory, integrative, motor) and structural/functional divisions of the nervous system (CNS, PNS, SNS, ANS, ENS).';
         }
       } else if (student.id === '7989701') { // Bussey, Leslie Ann (Section 1501)
         if (exam === 'LE1') {
