@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v28';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v28';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v28';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v30';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v30';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v30';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -363,6 +363,16 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           gameUrl = 'https://aistudio.google.com/apps/3051a604-b1f4-49d9-827d-144b917e9183?fullscreenApplet=true&showAssistant=true&showPreview=true';
           gameTitle = 'CardioQuest: A&P Heart Flow & Hemodynamics';
+        }
+      } else if (student.id === '7332513') { // Sisavath, Steven Lucky (Section 1501)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/b9a47789-af3b-46f7-a281-1a18f033e623';
+          notebookNotes = 'Describe the building blocks, structural classes, and biological functions of carbohydrates.';
+        } else if (exam === 'Final') {
+          status = 'submitted';
+          gameUrl = 'https://aistudio.google.com/apps/22d86fa8-8b7f-4176-8ed5-079f5e838e72?fullscreenApplet=true&showAssistant=true&showPreview=true';
+          gameTitle = 'BioFoundation: Cellular to Tissue A&P Game';
         }
       }
 
@@ -801,6 +811,46 @@ export function generateInitialAIGames(): AIGameData[] {
           ],
           correctIndex: 0,
           explanation: 'High ventricular pressures overcome systemic arterial backpressure, forcing the aortic and pulmonary semilunar valves open.',
+        },
+      ],
+    },
+    {
+      id: 'game-steven-sisavath',
+      studentId: '7332513',
+      studentName: 'Sisavath, Steven Lucky',
+      studentSection: '1501',
+      sloText: 'Explain how chemistry, cellular biology, and transport mechanisms establish the biological foundation for tissue function (Chapters 1–3).',
+      hapsCode: 'AP-19-F-02-01',
+      hapsNominal: 'Biological foundations: cellular to tissue organization',
+      gameTitle: 'BioFoundation: Cellular to Tissue A&P Game',
+      gameType: 'clinical-scenario',
+      aiStudioUrl: 'https://aistudio.google.com/apps/22d86fa8-8b7f-4176-8ed5-079f5e838e72?fullscreenApplet=true&showAssistant=true&showPreview=true',
+      geminiPrompt: 'Design an interactive A&P review game exploring how biochemical macromolecules, cellular transport mechanisms, and organelles coordinate to sustain histological tissue physiology.',
+      status: 'submitted',
+      extraCreditScore: 100,
+      submittedAt: '2026-09-10',
+      questions: [
+        {
+          question: 'Which biomacromolecule serves as the primary immediate source of cellular ATP through glycolysis and oxidative phosphorylation?',
+          options: [
+            'Carbohydrates (monosaccharides like glucose)',
+            'Phospholipids',
+            'Triglycerides',
+            'Nucleic acids'
+          ],
+          correctIndex: 0,
+          explanation: 'Carbohydrates, particularly glucose, are rapidly catabolized to produce cellular ATP via glycolysis, the citric acid cycle, and oxidative phosphorylation.',
+        },
+        {
+          question: 'What cellular transport mechanism moves solutes against their electrochemical gradient using direct energy from ATP hydrolysis?',
+          options: [
+            'Primary active transport',
+            'Facilitated diffusion',
+            'Simple diffusion',
+            'Osmosis'
+          ],
+          correctIndex: 0,
+          explanation: 'Primary active transport directly hydrolyzes ATP to move ions and solutes against their concentration or electrical gradient (e.g., Na+/K+ ATPase pump).',
         },
       ],
     },
