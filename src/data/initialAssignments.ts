@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v30';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v30';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v30';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v31';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v31';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v31';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -257,12 +257,24 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/f7ccec1d-134f-4488-9956-395c6b5cc0c1';
           notebookNotes = 'Intramembranous vs. Endochondral ossification bone formation comparison.';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/108e48ba-04e6-417c-a7f4-85b1a2bfd985';
+          notebookNotes = 'Distinguish between the anatomical composition and arrangement of white matter and gray matter in the nervous system.';
+        } else if (exam === 'Final') {
+          status = 'submitted';
+          gameUrl = 'https://aistudio.google.com/apps/fef0cbcd-a562-4c8c-b6a3-8955043bd4c2?showAssistant=true&showPreview=true';
+          gameTitle = 'Calcium Equilibrium: A&P Homeostasis Game';
         }
       } else if (student.id === '7826640') { // Quintanilla, Ellyannie (Section 1501)
         if (exam === 'LE1') {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/acf49af3-8e45-48aa-90de-a9182daa03d7';
           notebookNotes = 'Physiologically important properties of water: solvency, thermal stability, reactivity, and lubrication.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/b444d030-f8cd-4449-92b4-8e648c7f1f79';
+          notebookNotes = 'Classify connective tissues (embryonic, loose, dense, cartilage, bone, blood) with their locations and functions.';
         }
       } else if (student.id === '8063449') { // Wolford, Hannah (Section 1201)
         if (exam === 'LE1') {
@@ -359,10 +371,28 @@ export function generateInitialAssignments(): Assignment[] {
           notebookNotes = 'Identify the microscopic structure of compact bone (osteons, concentric lamellae, central canal, canaliculi, lacunae) and spongy bone (trabeculae).';
         }
       } else if (student.id === '8028028') { // Turrubiartes, Miley (Section 1501)
-        if (exam === 'Final') {
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/c248316c-cf68-41b2-a446-93e7e8b40e26';
+          notebookNotes = 'Compare and contrast lipids (triglycerides, phospholipids, steroids) in molecular structure and cellular roles.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/e1932bd2-3b70-40cc-b4f8-197fc0bd0154';
+          notebookNotes = 'Describe the structure, locations, and functions of mucous, serous, cutaneous, and synovial membranes.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/96eeebc8-0f4a-4278-848d-2b8fc688834f';
+          notebookNotes = 'Explain the relationship between the anatomical and functional classifications of joints.';
+        } else if (exam === 'Final') {
           status = 'submitted';
           gameUrl = 'https://aistudio.google.com/apps/3051a604-b1f4-49d9-827d-144b917e9183?fullscreenApplet=true&showAssistant=true&showPreview=true';
           gameTitle = 'CardioQuest: A&P Heart Flow & Hemodynamics';
+        }
+      } else if (student.id === '8060817') { // Carpio, Katherine (Section 1101)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/68b8850d-ede6-4f6b-a28a-e33e820074b9';
+          notebookNotes = 'List the organ systems of the human body and summarize their primary functions.';
         }
       } else if (student.id === '7332513') { // Sisavath, Steven Lucky (Section 1501)
         if (exam === 'LE1') {
@@ -851,6 +881,46 @@ export function generateInitialAIGames(): AIGameData[] {
           ],
           correctIndex: 0,
           explanation: 'Primary active transport directly hydrolyzes ATP to move ions and solutes against their concentration or electrical gradient (e.g., Na+/K+ ATPase pump).',
+        },
+      ],
+    },
+    {
+      id: 'game-dana-davis',
+      studentId: '7959119',
+      studentName: 'Davis, Dana Yvette',
+      studentSection: '1501',
+      sloText: 'Explain how calcium homeostasis is dynamically regulated through negative feedback loops involving parathyroid hormone (PTH), calcitonin, osteoclasts, and kidneys.',
+      hapsCode: 'AP-19-F-04-03',
+      hapsNominal: 'Calcium homeostasis & regulation (PTH, calcitonin)',
+      gameTitle: 'Calcium Equilibrium: A&P Homeostasis Game',
+      gameType: 'clinical-scenario',
+      aiStudioUrl: 'https://aistudio.google.com/apps/fef0cbcd-a562-4c8c-b6a3-8955043bd4c2?showAssistant=true&showPreview=true',
+      geminiPrompt: 'Design an interactive A&P simulation game where students balance systemic calcium ions through endocrine feedback loops of parathyroid hormone and calcitonin.',
+      status: 'submitted',
+      extraCreditScore: 100,
+      submittedAt: '2026-09-11',
+      questions: [
+        {
+          question: 'When blood calcium levels drop below the normal homeostatic set point, which endocrine gland releases parathyroid hormone (PTH)?',
+          options: [
+            'Parathyroid glands',
+            'Thyroid parafollicular (C) cells',
+            'Anterior pituitary gland',
+            'Adrenal cortex',
+          ],
+          correctIndex: 0,
+          explanation: 'Low blood calcium triggers the parathyroid glands to secrete PTH, stimulating osteoclast activity and renal calcium reabsorption.',
+        },
+        {
+          question: 'How does calcitonin counteract hypercalcemia in systemic mineral regulation?',
+          options: [
+            'Inhibiting osteoclasts and promoting calcium deposition into bone matrix',
+            'Stimulating osteoclasts to resorb bone matrix',
+            'Increasing intestinal absorption of calcium via calcitriol',
+            'Decreasing renal calcium excretion in urine',
+          ],
+          correctIndex: 0,
+          explanation: 'Calcitonin, secreted by thyroid parafollicular cells during hypercalcemia, inhibits osteoclasts and stimulates bone calcium uptake.',
         },
       ],
     },
