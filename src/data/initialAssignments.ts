@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v31';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v31';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v31';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v32';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v32';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v32';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -275,6 +275,14 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/b444d030-f8cd-4449-92b4-8e648c7f1f79';
           notebookNotes = 'Classify connective tissues (embryonic, loose, dense, cartilage, bone, blood) with their locations and functions.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/c0921b6a-1994-419a-a79a-3645e5fc56b4';
+          notebookNotes = 'Identify major bones and anatomical landmarks of the appendicular skeleton (pectoral girdle, upper limbs, pelvic girdle, lower limbs).';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/6cd56945-3a43-48ad-824d-aac39187c6be';
+          notebookNotes = 'Distinguish between excitatory postsynaptic potentials (EPSPs) and inhibitory postsynaptic potentials (IPSPs), and explain temporal and spatial summation.';
         }
       } else if (student.id === '8063449') { // Wolford, Hannah (Section 1201)
         if (exam === 'LE1') {
