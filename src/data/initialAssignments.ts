@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v33';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v33';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v33';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v34';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v34';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v34';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -405,6 +405,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/96eeebc8-0f4a-4278-848d-2b8fc688834f';
           notebookNotes = 'Explain the relationship between the anatomical and functional classifications of joints.';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/496d65bd-59bd-4f74-8fce-8689802e04d1';
+          notebookNotes = 'Discuss the formation, circulation, and functions of cerebrospinal fluid (CSF) through the ventricular system and subarachnoid space.';
         } else if (exam === 'Final') {
           status = 'submitted';
           gameUrl = 'https://aistudio.google.com/apps/3051a604-b1f4-49d9-827d-144b917e9183?fullscreenApplet=true&showAssistant=true&showPreview=true';
