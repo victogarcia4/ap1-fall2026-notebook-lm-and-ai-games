@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v32';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v32';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v32';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v33';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v33';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v33';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -235,7 +235,11 @@ export function generateInitialAssignments(): Assignment[] {
           gameTitle = 'Metabolic Bioenergetics & Respiration Arena';
         }
       } else if (student.id === '8159253') { // Bell, Cyaira (Section 1501)
-        if (exam === 'LE2') {
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/ac83f241-7af3-48aa-9d8f-4e23b3fceb13';
+          notebookNotes = 'List and describe the location of major anatomical regions and abdominopelvic quadrants.';
+        } else if (exam === 'LE2') {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/eec0bcfb-04ba-4acc-8df9-cbc461855202';
           notebookNotes = 'Metabolic pathway regulation, allosteric control, and rate-limiting enzymes.';
@@ -247,6 +251,16 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/b4f37aa0-befc-4d1f-b7f5-8a01e4145299';
           notebookNotes = 'Structural classification of neurons: multipolar, bipolar, unipolar, and anaxonic.';
+        } else if (exam === 'Final') {
+          status = 'submitted';
+          gameUrl = 'https://aistudio.google.com/apps/c756a7e3-ac3b-454a-9cf3-1600c6c76bc8?showAssistant=true&showPreview=true&fullscreenApplet=true';
+          gameTitle = 'Metabolic Pathways & Physiological Demands Game';
+        }
+      } else if (student.id === '7131580') { // Douglas, Alyssa (Section 1101)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/a8d9f660-4ef1-4ebe-837d-23ace1b9aef2';
+          notebookNotes = 'Define the law of mass balance and relate it to physiological homeostasis.';
         }
       } else if (student.id === '7959119') { // Davis, Dana Yvette (Section 1501)
         if (exam === 'LE2') {
@@ -929,6 +943,46 @@ export function generateInitialAIGames(): AIGameData[] {
           ],
           correctIndex: 0,
           explanation: 'Calcitonin, secreted by thyroid parafollicular cells during hypercalcemia, inhibits osteoclasts and stimulates bone calcium uptake.',
+        },
+      ],
+    },
+    {
+      id: 'game-cyaira-bell',
+      studentId: '8159253',
+      studentName: 'Bell, Cyaira',
+      studentSection: '1501',
+      sloText: 'Correlate cellular metabolism and respiration pathways with physiological energy demands during resting, exercise, and fasting states.',
+      hapsCode: 'AP-19-C-05-06',
+      hapsNominal: 'Cellular metabolism and energy demands',
+      gameTitle: 'Metabolic Pathways & Physiological Demands Game',
+      gameType: 'clinical-scenario',
+      aiStudioUrl: 'https://aistudio.google.com/apps/c756a7e3-ac3b-454a-9cf3-1600c6c76bc8?showAssistant=true&showPreview=true&fullscreenApplet=true',
+      geminiPrompt: 'Design an interactive A&P challenge modeling cellular respiration, glycolysis, the citric acid cycle, and oxidative phosphorylation across resting, exercise, and fasting metabolic states.',
+      status: 'submitted',
+      extraCreditScore: 100,
+      submittedAt: '2026-09-12',
+      questions: [
+        {
+          question: 'During intense anaerobic exercise when oxygen delivery to skeletal muscle is insufficient, pyruvate is converted into which molecule to regenerate NAD+ for glycolysis?',
+          options: [
+            'Lactic acid (lactate)',
+            'Acetyl-CoA',
+            'Citric acid',
+            'Oxaloacetate',
+          ],
+          correctIndex: 0,
+          explanation: 'Under anaerobic conditions, lactate dehydrogenase reduces pyruvate to lactate, oxidizing NADH back to NAD+ so glycolysis can continue generating ATP.',
+        },
+        {
+          question: 'In prolonged fasting states, what alternative fuel source is synthesized by the liver through beta-oxidation of fatty acids to nourish cardiac muscle and the brain?',
+          options: [
+            'Ketone bodies (acetoacetate, beta-hydroxybutyrate)',
+            'Glycogen',
+            'Essential amino acids',
+            'Lactose',
+          ],
+          correctIndex: 0,
+          explanation: 'During prolonged fasting or carbohydrate depletion, the liver converts acetyl-CoA from fatty acid breakdown into ketone bodies to supply energy to the brain and heart.',
         },
       ],
     },
