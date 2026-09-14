@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v34';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v34';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v34';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v38';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v38';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v38';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -149,6 +149,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/8750c319-86d6-41a3-9134-9e18e6d4cb92';
           notebookNotes = 'Predict the pathophysiological changes and consequences of joint disorders such as osteoarthritis and rheumatoid arthritis.';
+        } else if (exam === 'Final') {
+          status = 'submitted';
+          gameUrl = 'https://aistudio.google.com/apps/44019fff-b160-4b75-8332-b15d3f0fb4cb?fullscreenApplet=true&showAssistant=true&showPreview=true';
+          gameTitle = 'ArthroLogic: Joint Mechanics & Pathology Game';
         }
       } else if (student.id === '7778338') { // Velazquez, Yesenia (Section 1201)
         if (exam === 'LE1') {
@@ -420,30 +424,55 @@ export function generateInitialAssignments(): Assignment[] {
           notebookUrl = 'https://notebook.google.com/notebook/68b8850d-ede6-4f6b-a28a-e33e820074b9';
           notebookNotes = 'List the organ systems of the human body and summarize their primary functions.';
         }
+      } else if (student.id === '7237055') { // Guzman, Blanca E. (Section 1101)
+        if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/119c7e1b-aff2-456d-ad90-c2e3956d726f';
+          notebookNotes = 'List major classes of neurotransmitters (acetylcholine, amino acids, monoamines, neuropeptides, gases) and describe their primary mechanisms.';
+        }
       } else if (student.id === '7332513') { // Sisavath, Steven Lucky (Section 1501)
         if (exam === 'LE1') {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/b9a47789-af3b-46f7-a281-1a18f033e623';
           notebookNotes = 'Describe the building blocks, structural classes, and biological functions of carbohydrates.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/4f4305da-2bf8-4b06-af55-1877b7e1c28e';
+          notebookNotes = 'Describe the general characteristics, cellular composition (neurons and neuroglia), and functions of nervous tissue.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/62f19839-61b2-4204-9b82-d08780ab0e1b';
+          notebookNotes = 'Describe the functional classification of joints based on movement: synarthroses, amphiarthroses, and diarthroses.';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/857f41f0-3527-4568-b8c2-b118b07a42ee';
+          notebookNotes = 'Describe the coverings (meninges: dura mater, arachnoid mater, pia mater) and spaces surrounding the brain and spinal cord.';
         } else if (exam === 'Final') {
           status = 'submitted';
           gameUrl = 'https://aistudio.google.com/apps/22d86fa8-8b7f-4176-8ed5-079f5e838e72?fullscreenApplet=true&showAssistant=true&showPreview=true';
           gameTitle = 'BioFoundation: Cellular to Tissue A&P Game';
         }
+      } else if (student.id === '7989206' || student.name.includes('Jesus')) { // Lopez, Jesus (Section 1201)
+        if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/a4a123dd-4f57-4669-84fd-be4a4ebcde97';
+          notebookNotes = 'Detail the countercurrent multiplier and urea trapping mechanisms forming concentrated urine under ADH.';
+        }
       }
 
       const isSubmitted = status === 'submitted' || status === 'reviewed';
+      const isJesusLE4 = (student.id === '7989206' || student.name.includes('Jesus')) && exam === 'LE4';
       assignments.push({
         id: assignmentId,
         studentId: student.id,
         studentName: student.name,
         studentSection: student.section,
         exam,
-        sloId: slo.id,
-        sloText: slo.text,
-        hapsCode: slo.hapsCode,
-        hapsNominal: slo.hapsNominal,
-        chapter: slo.chapter,
+        sloId: isJesusLE4 ? 'LE4-SLO-ADV' : slo.id,
+        sloText: isJesusLE4 ? 'Detail the countercurrent multiplier and urea trapping mechanisms forming concentrated urine under ADH.' : slo.text,
+        hapsCode: isJesusLE4 ? 'AP-19-N-04-03' : slo.hapsCode,
+        hapsNominal: isJesusLE4 ? 'Countercurrent multiplier & urea trapping under ADH' : slo.hapsNominal,
+        chapter: isJesusLE4 ? 'Renal Physiology / ADH' : slo.chapter,
         notebookUrl,
         notebookNotes,
         deliverables: notebookUrl ? {
@@ -987,6 +1016,46 @@ export function generateInitialAIGames(): AIGameData[] {
           ],
           correctIndex: 0,
           explanation: 'During prolonged fasting or carbohydrate depletion, the liver converts acetyl-CoA from fatty acid breakdown into ketone bodies to supply energy to the brain and heart.',
+        },
+      ],
+    },
+    {
+      id: 'game-noemi-santillan',
+      studentId: '7828698',
+      studentName: 'Santillan, Noemi Abigail',
+      studentSection: '1201',
+      sloText: 'Evaluate how the structural classification of joints directly dictates mobility, stability, and susceptibility to clinical pathology (Chapter 8).',
+      hapsCode: 'AP-19-F-08-01',
+      hapsNominal: 'Joint structural classification (fibrous, cartilaginous, synovial)',
+      gameTitle: 'ArthroLogic: Joint Mechanics & Pathology Game',
+      gameType: 'clinical-scenario',
+      aiStudioUrl: 'https://aistudio.google.com/apps/44019fff-b160-4b75-8332-b15d3f0fb4cb?fullscreenApplet=true&showAssistant=true&showPreview=true',
+      geminiPrompt: 'Design an interactive A&P simulation game that tests how the structural classification of joints (fibrous, cartilaginous, synovial) dictates degrees of mobility, stability tradeoffs, and susceptibility to pathologies like osteoarthritis and rheumatoid arthritis.',
+      status: 'submitted',
+      extraCreditScore: 100,
+      submittedAt: '2026-09-14',
+      questions: [
+        {
+          question: 'Which structural class of joints features a fluid-filled cavity, provides the greatest range of motion, and is most susceptible to acute dislocations and degenerative osteoarthritis?',
+          options: [
+            'Synovial joints (diarthroses)',
+            'Fibrous sutures (synarthroses)',
+            'Cartilaginous symphyses (amphiarthroses)',
+            'Gomphoses',
+          ],
+          correctIndex: 0,
+          explanation: 'Synovial joints are diarthrotic and offer extensive mobility through a joint capsule and articular cartilage, but their high range of motion makes them vulnerable to injury and mechanical wear.',
+        },
+        {
+          question: 'How does the autoimmune mechanism of rheumatoid arthritis differ pathologically from the wear-and-tear degeneration observed in primary osteoarthritis?',
+          options: [
+            'Rheumatoid arthritis involves immune-mediated chronic inflammation and pannus destruction of the synovial membrane, whereas osteoarthritis primarily involves progressive mechanical erosion of articular cartilage.',
+            'Osteoarthritis is caused by systemic autoimmune antibodies attacking chondrocytes.',
+            'Rheumatoid arthritis only affects fibrous joints such as cranial sutures.',
+            'Osteoarthritis spares the articular cartilage and only affects the epiphyseal plates.',
+          ],
+          correctIndex: 0,
+          explanation: 'Rheumatoid arthritis is an autoimmune disorder targeting the synovial membrane with inflammatory pannus formation, while osteoarthritis is a biomechanical breakdown of articular cartilage over time.',
         },
       ],
     },

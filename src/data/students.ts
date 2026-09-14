@@ -51,6 +51,7 @@ export const INITIAL_STUDENTS: Student[] = [
   { id: '8043673', name: 'Iglesias, Camila', section: '1201' },
   { id: '7990365', name: 'Jerome, Kennidi Amiree', section: '1201' },
   { id: '7989205', name: 'Lopez, Itzel Danay', section: '1201' },
+  { id: '7989206', name: 'Lopez, Jesus', section: '1201' },
   { id: '7338264', name: 'Melendez, Yamaly', section: '1201' },
   { id: '8035971', name: 'Moran, Angel Adrian', section: '1201' },
   { id: '8029974', name: 'Ponce, Jaslen', section: '1201' },
