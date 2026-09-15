@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v38';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v38';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v38';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v39';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v39';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v39';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -457,6 +457,18 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/a4a123dd-4f57-4669-84fd-be4a4ebcde97';
           notebookNotes = 'Detail the countercurrent multiplier and urea trapping mechanisms forming concentrated urine under ADH.';
+        }
+      } else if (student.id === '7986008') { // Devora, Giovanni Eraquio (Section 1101)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/b435e5b4-145a-4ad6-bd03-360699d3fa15';
+          notebookNotes = 'Explain why negative feedback is the predominant homeostatic regulatory mechanism in the body.';
+        }
+      } else if (student.id === '7356820') { // Gentry, Quincy Jerrod (Section 1501)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/dcf3c8ab-5590-4e22-8a7a-80a9d0eec93d';
+          notebookNotes = 'Compare and contrast positive and negative feedback mechanisms, providing physiological examples of each.';
         }
       }
 
