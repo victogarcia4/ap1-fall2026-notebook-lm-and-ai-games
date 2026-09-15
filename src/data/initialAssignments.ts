@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v39';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v39';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v39';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v40';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v40';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v40';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -151,7 +151,7 @@ export function generateInitialAssignments(): Assignment[] {
           notebookNotes = 'Predict the pathophysiological changes and consequences of joint disorders such as osteoarthritis and rheumatoid arthritis.';
         } else if (exam === 'Final') {
           status = 'submitted';
-          gameUrl = 'https://aistudio.google.com/apps/44019fff-b160-4b75-8332-b15d3f0fb4cb?fullscreenApplet=true&showAssistant=true&showPreview=true';
+          gameUrl = 'https://ai.studio/apps/44019fff-b160-4b75-8332-b15d3f0fb4cb?fullscreenApplet=true';
           gameTitle = 'ArthroLogic: Joint Mechanics & Pathology Game';
         }
       } else if (student.id === '7778338') { // Velazquez, Yesenia (Section 1201)
@@ -470,21 +470,97 @@ export function generateInitialAssignments(): Assignment[] {
           notebookUrl = 'https://notebook.google.com/notebook/dcf3c8ab-5590-4e22-8a7a-80a9d0eec93d';
           notebookNotes = 'Compare and contrast positive and negative feedback mechanisms, providing physiological examples of each.';
         }
+      } else if (student.id === '7928723') { // Resendiz, Luz (Section 1201)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/25a66ee8-8db7-47ff-87e5-8b98affd6a8c';
+          notebookNotes = 'Describe the structure and functions of nucleic acids (DNA and RNA) and the role of ATP as the cellular energy currency.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/809311e1-c944-4b9c-86ed-28b6a1929966';
+          notebookNotes = 'List the components of the integumentary system and the subcutaneous layer (hypodermis).';
+        }
+      } else if (student.id === '8088157') { // Rivera Rodriguez, Thalia De La Caridad (Section 1201)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/60553a35-8d34-4ec0-96cb-5cf9e401111b';
+          notebookNotes = 'Describe the chemical composition and fluid mosaic model of the plasma membrane.';
+        }
+      } else if (student.id === '7687626') { // Taft, William (Section 1201)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/b1e84672-d7ca-4eed-84b3-f1806900857a';
+          notebookNotes = 'Define resting membrane potential (RMP) and explain how the Na+/K+ ATPase pump maintains it.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/19373a08-9468-47a1-b124-7f5499a89c62';
+          notebookNotes = 'Describe the cellular processes of growth and keratinization in the epidermis.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/a3e831c7-816b-42bc-a2df-1f64f3ae0b60';
+          notebookNotes = 'Compare and contrast the structure, location, histology, and control of skeletal, cardiac, and smooth muscle tissue.';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/a50403d2-a5fa-4243-bfdf-71ee5490f8fd';
+          notebookNotes = 'Identify the 12 pairs of cranial nerves by Roman numeral and name, classifying their functional fiber types (sensory, motor, mixed) and major actions.';
+        }
       }
 
       const isSubmitted = status === 'submitted' || status === 'reviewed';
       const isJesusLE4 = (student.id === '7989206' || student.name.includes('Jesus')) && exam === 'LE4';
+      const isTaft = student.id === '7687626';
+
+      let finalSloId = slo.id;
+      let finalSloText = slo.text;
+      let finalHapsCode = slo.hapsCode;
+      let finalHapsNominal = slo.hapsNominal;
+      let finalChapter = slo.chapter;
+
+      if (isJesusLE4) {
+        finalSloId = 'LE4-SLO-ADV';
+        finalSloText = 'Detail the countercurrent multiplier and urea trapping mechanisms forming concentrated urine under ADH.';
+        finalHapsCode = 'AP-19-N-04-03';
+        finalHapsNominal = 'Countercurrent multiplier & urea trapping under ADH';
+        finalChapter = 'Renal Physiology / ADH';
+      } else if (isTaft) {
+        if (exam === 'LE1') {
+          finalSloId = 'LE1-SLO-21';
+          finalSloText = 'Define resting membrane potential (RMP) and explain how the Na+/K+ ATPase pump maintains it.';
+          finalHapsCode = 'AP-19-C-09-01';
+          finalHapsNominal = 'Resting membrane potential';
+          finalChapter = 'Chapter 3';
+        } else if (exam === 'LE2') {
+          finalSloId = 'LE2-SLO-21';
+          finalSloText = 'Describe the cellular processes of growth and keratinization in the epidermis.';
+          finalHapsCode = 'AP-19-E-02-04';
+          finalHapsNominal = 'Growth and keratinization of epidermis';
+          finalChapter = 'Chapter 6';
+        } else if (exam === 'LE3') {
+          finalSloId = 'LE3-SLO-21';
+          finalSloText = 'Compare and contrast the structure, location, histology, and control of skeletal, cardiac, and smooth muscle tissue.';
+          finalHapsCode = 'AP-19-G-02-01';
+          finalHapsNominal = 'Skeletal, cardiac, and smooth muscle comparison';
+          finalChapter = 'Chapter 9';
+        } else if (exam === 'LE4') {
+          finalSloId = 'LE4-SLO-21';
+          finalSloText = 'Identify the 12 pairs of cranial nerves by Roman numeral and name, classifying their functional fiber types (sensory, motor, mixed) and major actions.';
+          finalHapsCode = 'AP-19-H-11-01';
+          finalHapsNominal = 'Cranial nerves and major functions';
+          finalChapter = 'Chapter 11';
+        }
+      }
+
       assignments.push({
         id: assignmentId,
         studentId: student.id,
         studentName: student.name,
         studentSection: student.section,
         exam,
-        sloId: isJesusLE4 ? 'LE4-SLO-ADV' : slo.id,
-        sloText: isJesusLE4 ? 'Detail the countercurrent multiplier and urea trapping mechanisms forming concentrated urine under ADH.' : slo.text,
-        hapsCode: isJesusLE4 ? 'AP-19-N-04-03' : slo.hapsCode,
-        hapsNominal: isJesusLE4 ? 'Countercurrent multiplier & urea trapping under ADH' : slo.hapsNominal,
-        chapter: isJesusLE4 ? 'Renal Physiology / ADH' : slo.chapter,
+        sloId: finalSloId,
+        sloText: finalSloText,
+        hapsCode: finalHapsCode,
+        hapsNominal: finalHapsNominal,
+        chapter: finalChapter,
         notebookUrl,
         notebookNotes,
         deliverables: notebookUrl ? {
@@ -1041,7 +1117,7 @@ export function generateInitialAIGames(): AIGameData[] {
       hapsNominal: 'Joint structural classification (fibrous, cartilaginous, synovial)',
       gameTitle: 'ArthroLogic: Joint Mechanics & Pathology Game',
       gameType: 'clinical-scenario',
-      aiStudioUrl: 'https://aistudio.google.com/apps/44019fff-b160-4b75-8332-b15d3f0fb4cb?fullscreenApplet=true&showAssistant=true&showPreview=true',
+      aiStudioUrl: 'https://ai.studio/apps/44019fff-b160-4b75-8332-b15d3f0fb4cb?fullscreenApplet=true',
       geminiPrompt: 'Design an interactive A&P simulation game that tests how the structural classification of joints (fibrous, cartilaginous, synovial) dictates degrees of mobility, stability tradeoffs, and susceptibility to pathologies like osteoarthritis and rheumatoid arthritis.',
       status: 'submitted',
       extraCreditScore: 100,
