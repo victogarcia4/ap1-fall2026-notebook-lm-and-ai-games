@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v40';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v40';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v40';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v44';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v44';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v44';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -149,6 +149,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/8750c319-86d6-41a3-9134-9e18e6d4cb92';
           notebookNotes = 'Predict the pathophysiological changes and consequences of joint disorders such as osteoarthritis and rheumatoid arthritis.';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/43ceb93e-f9d0-4271-8839-f1f71a769e17';
+          notebookNotes = 'Describe the structural and functional components of a somatic reflex arc and differentiate monosynaptic and polysynaptic reflexes.';
         } else if (exam === 'Final') {
           status = 'submitted';
           gameUrl = 'https://ai.studio/apps/44019fff-b160-4b75-8332-b15d3f0fb4cb?fullscreenApplet=true';
@@ -469,6 +473,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/dcf3c8ab-5590-4e22-8a7a-80a9d0eec93d';
           notebookNotes = 'Compare and contrast positive and negative feedback mechanisms, providing physiological examples of each.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/449cb85b-19a9-4ec1-a784-c6455f079b4c';
+          notebookNotes = 'List the four major tissue types in the body (epithelial, connective, muscle, nervous) and indicate their primary locations and functions.';
         }
       } else if (student.id === '7928723') { // Resendiz, Luz (Section 1201)
         if (exam === 'LE1') {
@@ -479,12 +487,46 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/809311e1-c944-4b9c-86ed-28b6a1929966';
           notebookNotes = 'List the components of the integumentary system and the subcutaneous layer (hypodermis).';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/24872f45-2544-4d32-acb4-fa517c3df70d';
+          notebookNotes = 'Define the movements that occur at synovial joints (flexion, extension, hyperextension, abduction, adduction, circumduction, rotation, supination, pronation, inversion, eversion).';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/97310ab7-b266-42e2-b781-b0381d9dfefc';
+          notebookNotes = 'Explain the functions of the limbic system in emotion and memory, and the reticular activating system (RAS) in consciousness and arousal.';
         }
       } else if (student.id === '8088157') { // Rivera Rodriguez, Thalia De La Caridad (Section 1201)
         if (exam === 'LE1') {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/60553a35-8d34-4ec0-96cb-5cf9e401111b';
           notebookNotes = 'Describe the chemical composition and fluid mosaic model of the plasma membrane.';
+        }
+      } else if (student.id === '8150234') { // Franco, Regina (Section 1101)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/4c335af4-a1cf-48a7-9a08-816ae55b4644?authuser=1';
+          notebookNotes = 'Explain the mechanisms of covalent, ionic, and hydrogen chemical bonds with biological examples (flashcards generated from selected sources).';
+        }
+      } else if (student.id === '8031930') { // Guzman, Ashlie Nancie (Section 1101)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/225ddc70-59e8-4ec7-aa7f-24b3534ecf8d';
+          notebookNotes = 'Describe the physiologically important properties of water (solvency, thermal stability, reactivity, lubrication).';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/8248a8c7-ddc7-4b2d-92de-6ac6cbc364f1';
+          notebookNotes = 'Classify connective tissues (embryonic, loose, dense, cartilage, bone, blood) with their locations and functions.';
+        }
+      } else if (student.id === '7948782') { // Campa, Yarely (Section 1201)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/b1b8dfd1-3c40-412d-ac52-ce0cf1d6554c';
+          notebookNotes = 'Describe the major levels of structural organization in the human organism from chemical to organismal.';
+        } else if (exam === 'Final') {
+          status = 'submitted';
+          gameUrl = 'https://aistudio.google.com/apps/6a29bb9e-50d9-4e28-bd83-5ee1b22881ae?fullscreenApplet=true';
+          gameTitle = 'Tissue Architect: A&P Histology Quest';
         }
       } else if (student.id === '7687626') { // Taft, William (Section 1201)
         if (exam === 'LE1') {
@@ -503,6 +545,28 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/a50403d2-a5fa-4243-bfdf-71ee5490f8fd';
           notebookNotes = 'Identify the 12 pairs of cranial nerves by Roman numeral and name, classifying their functional fiber types (sensory, motor, mixed) and major actions.';
+        }
+      } else if (student.id === '8002796') { // Williams, Asia Amyrie (Section 1501)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/6ffaf8c8-3cdc-4462-8291-1c0ff2186385';
+          notebookNotes = 'Explain the four levels of protein structure (primary, secondary, tertiary, quaternary) and the consequences of denaturation.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/d8f8ef0b-952c-486b-8df5-e8c02607a6bd';
+          notebookNotes = 'Compare and contrast intercellular junctions: tight junctions, desmosomes, and gap junctions.';
+        }
+      } else if (student.id === '7998925') { // Dokes, Donmonique (Section 1201)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/c4c0d7c1-3b35-42a9-b08b-e9063852e497';
+          notebookNotes = 'Compare and contrast positive and negative feedback mechanisms, providing physiological examples of each.';
+        }
+      } else if (student.id === '8035519') { // Carrizalez, Dulce Maria (Section 1501)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/b71ba69e-6564-457f-9cf3-9e348c8f0ef1';
+          notebookNotes = 'List the organ systems of the human body and summarize their primary functions.';
         }
       }
 
@@ -1144,6 +1208,46 @@ export function generateInitialAIGames(): AIGameData[] {
           ],
           correctIndex: 0,
           explanation: 'Rheumatoid arthritis is an autoimmune disorder targeting the synovial membrane with inflammatory pannus formation, while osteoarthritis is a biomechanical breakdown of articular cartilage over time.',
+        },
+      ],
+    },
+    {
+      id: 'game-yarely-campa',
+      studentId: '7948782',
+      studentName: 'Campa, Yarely',
+      studentSection: '1201',
+      sloText: 'Compare and contrast how the four primary tissue types contribute to the structure and function of the integumentary and musculoskeletal systems (Chapters 5–9).',
+      hapsCode: 'AP-19-D-01-01',
+      hapsNominal: 'Four primary tissue types comparison',
+      gameTitle: 'Tissue Architect: A&P Histology Quest',
+      gameType: 'clinical-scenario',
+      aiStudioUrl: 'https://aistudio.google.com/apps/6a29bb9e-50d9-4e28-bd83-5ee1b22881ae?fullscreenApplet=true',
+      geminiPrompt: 'Design an interactive histology and tissue architecture game exploring the four primary tissue types across integumentary and musculoskeletal systems, challenging students to match tissue histology with physiological function.',
+      status: 'submitted',
+      extraCreditScore: 100,
+      submittedAt: '2026-09-15',
+      questions: [
+        {
+          question: 'Which of the four primary tissue types is characterized by an abundance of extracellular matrix containing ground substance and protein fibers, serving to bind, support, and protect body organs?',
+          options: [
+            'Connective tissue',
+            'Epithelial tissue',
+            'Muscle tissue',
+            'Nervous tissue',
+          ],
+          correctIndex: 0,
+          explanation: 'Connective tissue is defined by relatively few cells surrounded by abundant extracellular matrix, providing tensile strength, elasticity, and physiological support.',
+        },
+        {
+          question: 'How do the specialized intercellular junctions (such as desmosomes and tight junctions) of epithelial tissue support its role as the barrier layer of the integument?',
+          options: [
+            'They create continuous impermeable or mechanically resilient sheets preventing transcellular leakage and resisting mechanical shearing stress.',
+            'They allow rapid electrical coupling similar to intercalated discs.',
+            'They produce calcium phosphate mineral crystals for rigidity.',
+            'They generate contractile force to adjust epidermal surface area.',
+          ],
+          correctIndex: 0,
+          explanation: 'Tight junctions seal adjacent cell membranes to prevent water and solute leakage, while desmosomes anchor keratin intermediate filaments across cells to resist mechanical strain.',
         },
       ],
     },
