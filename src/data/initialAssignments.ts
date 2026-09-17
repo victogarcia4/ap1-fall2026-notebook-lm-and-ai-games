@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v45';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v45';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v45';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v46';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v46';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v46';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -563,6 +563,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/302e75e7-8e29-4cb5-ab26-62754d4876b0';
           notebookNotes = 'Identify and describe the major structural components of a typical synovial joint (articular capsule, synovial fluid, ligaments, articular discs, bursae).';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/1c26b944-0c01-4b8e-8ab1-5407d7a8f211';
+          notebookNotes = 'Examine CNS and PNS divisions, brain structures, meninges, CSF circulation, spinal cord tracts, reflex arcs, and autonomic pathways.';
         }
       } else if (student.id === '7998925') { // Dokes, Donmonique (Section 1201)
         if (exam === 'LE1') {
