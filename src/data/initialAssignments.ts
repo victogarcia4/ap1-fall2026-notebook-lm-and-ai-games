@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v46';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v46';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v46';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v48';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v48';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v48';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -585,6 +585,36 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/0d8e48cd-33cf-49bb-bf05-0ba930959218?pli=1';
           notebookNotes = 'Define the genetic code, transcription, and translation, detailing how genetic information directs protein synthesis.';
+        }
+      } else if (student.id === '7854589') { // Banks Jr, Christopher Kareen (Section 1101)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/d55a0d98-3a7a-41ce-85d0-388672544f2d';
+          notebookNotes = 'List and describe the location of major anatomical regions and abdominopelvic quadrants.';
+        }
+      } else if (student.id === '7895965') { // Hubbard, Shelby Gemese (Section 1101)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/b59c93a8-3e4e-499a-bec9-825e2e6d0425';
+          notebookNotes = 'Compare and contrast lipids (triglycerides, phospholipids, steroids) in molecular structure and cellular roles.';
+        }
+      } else if (student.id === '8112484') { // Reed, Gabrielle Nicole (Section 1101)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/74553f4f-9527-4ed6-b92f-40116db975cf';
+          notebookNotes = 'Compare and contrast vesicular transport mechanisms: phagocytosis, pinocytosis, receptor-mediated endocytosis, and exocytosis.';
+        }
+      } else if (student.id === '7450125') { // Solano, Monserrat Adela (Section 1101)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/abc745af-8247-40b3-a541-df7818fb6b24';
+          notebookNotes = 'Describe the events in each phase of somatic cell division (mitosis: prophase, metaphase, anaphase, telophase and cytokinesis).';
+        }
+      } else if (student.id === '8036488') { // Richard, Alayzia (Section 1501)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/ef2bc406-a96a-40af-92c9-7af62bae6207';
+          notebookNotes = 'Define acid, base, buffer, and interpret the pH scale with respect to hydrogen ion concentration.';
         }
       }
 
