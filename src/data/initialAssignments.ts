@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v44';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v44';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v44';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v45';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v45';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v45';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -517,6 +517,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/8248a8c7-ddc7-4b2d-92de-6ac6cbc364f1';
           notebookNotes = 'Classify connective tissues (embryonic, loose, dense, cartilage, bone, blood) with their locations and functions.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/0c78b773-d1d5-4cac-9e0b-3afff2fc2663';
+          notebookNotes = 'Identify major bones and anatomical landmarks of the appendicular skeleton (pectoral girdle, upper limbs, pelvic girdle, lower limbs).';
         }
       } else if (student.id === '7948782') { // Campa, Yarely (Section 1201)
         if (exam === 'LE1') {
@@ -555,6 +559,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/d8f8ef0b-952c-486b-8df5-e8c02607a6bd';
           notebookNotes = 'Compare and contrast intercellular junctions: tight junctions, desmosomes, and gap junctions.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/302e75e7-8e29-4cb5-ab26-62754d4876b0';
+          notebookNotes = 'Identify and describe the major structural components of a typical synovial joint (articular capsule, synovial fluid, ligaments, articular discs, bursae).';
         }
       } else if (student.id === '7998925') { // Dokes, Donmonique (Section 1201)
         if (exam === 'LE1') {
@@ -567,6 +575,12 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/b71ba69e-6564-457f-9cf3-9e348c8f0ef1';
           notebookNotes = 'List the organ systems of the human body and summarize their primary functions.';
+        }
+      } else if (student.id === '7937808') { // Torres, Katherine Stephanie (Section 1101)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/0d8e48cd-33cf-49bb-bf05-0ba930959218?pli=1';
+          notebookNotes = 'Define the genetic code, transcription, and translation, detailing how genetic information directs protein synthesis.';
         }
       }
 
