@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v48';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v48';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v48';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v51';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v51';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v51';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -429,7 +429,11 @@ export function generateInitialAssignments(): Assignment[] {
           notebookNotes = 'List the organ systems of the human body and summarize their primary functions.';
         }
       } else if (student.id === '7237055') { // Guzman, Blanca E. (Section 1101)
-        if (exam === 'LE4') {
+        if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/c98bda8d-6994-4ea3-abf3-03aa33d6b31a';
+          notebookNotes = 'Distinguish among the three types of muscle tissue (skeletal, cardiac, smooth) with respect to histology, location, and control.';
+        } else if (exam === 'LE4') {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/119c7e1b-aff2-456d-ad90-c2e3956d726f';
           notebookNotes = 'List major classes of neurotransmitters (acetylcholine, amino acids, monoamines, neuropeptides, gases) and describe their primary mechanisms.';
@@ -477,6 +481,14 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/449cb85b-19a9-4ec1-a784-c6455f079b4c';
           notebookNotes = 'List the four major tissue types in the body (epithelial, connective, muscle, nervous) and indicate their primary locations and functions.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/42d23005-76f1-4998-9f75-8eeba505bd85';
+          notebookNotes = 'Compare and contrast interstitial (lengthwise) and appositional (width) bone growth.';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/9fcfd0b1-74bd-4b7c-89b4-c94f355f6d05';
+          notebookNotes = 'Explain how the resting membrane potential (RMP) is established and maintained across neuronal membranes.';
         }
       } else if (student.id === '7928723') { // Resendiz, Luz (Section 1201)
         if (exam === 'LE1') {
@@ -615,6 +627,22 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/ef2bc406-a96a-40af-92c9-7af62bae6207';
           notebookNotes = 'Define acid, base, buffer, and interpret the pH scale with respect to hydrogen ion concentration.';
+        }
+      } else if (student.id === '8127365') { // Duarte Lucas, Fatima (Section 1201)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/3b4bffd9-aa6d-45ec-b85d-d84675f48f5c';
+          notebookNotes = 'Explain why negative feedback is the predominant homeostatic regulatory mechanism in the body.';
+        } else if (exam === 'Final') {
+          status = 'submitted';
+          gameUrl = 'https://skeletal-muscle-contraction-game.ai.studio/';
+          gameTitle = 'Skeletal Muscle Contraction: The Bio-Circuit';
+        }
+      } else if (student.id === '7989205') { // Lopez, Itzel Danay (Section 1201)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/fcff15d6-aa7b-44b7-9a7c-4ceaab462506';
+          notebookNotes = 'Describe the physiologically important properties of water (solvency, thermal stability, reactivity, lubrication).';
         }
       }
 
@@ -1296,6 +1324,57 @@ export function generateInitialAIGames(): AIGameData[] {
           ],
           correctIndex: 0,
           explanation: 'Tight junctions seal adjacent cell membranes to prevent water and solute leakage, while desmosomes anchor keratin intermediate filaments across cells to resist mechanical strain.',
+        },
+      ],
+    },
+    {
+      id: 'game-fatima-duarte-lucas',
+      studentId: '8127365',
+      studentName: 'Duarte Lucas, Fatima',
+      studentSection: '1201',
+      sloText: 'Integrate the events of neural excitation, neuromuscular junction transmission, and sliding filament contraction in skeletal muscle performance (Chapters 9 & 10).',
+      hapsCode: 'AP-19-G-03-01',
+      hapsNominal: 'Neuromuscular junction & muscle contraction mechanism',
+      gameTitle: 'Skeletal Muscle Contraction: The Bio-Circuit',
+      gameType: 'clinical-scenario',
+      aiStudioUrl: 'https://skeletal-muscle-contraction-game.ai.studio/',
+      geminiPrompt: 'Design an interactive A&P bio-circuit learning game exploring the sequence of events in neural excitation, acetylcholine release at the neuromuscular junction, action potential propagation down T-tubules, calcium release from the sarcoplasmic reticulum, and the sliding filament mechanism of skeletal muscle contraction.',
+      status: 'submitted',
+      extraCreditScore: 100,
+      submittedAt: '2026-09-18',
+      questions: [
+        {
+          question: 'What triggers the release of acetylcholine (ACh) from synaptic vesicles into the synaptic cleft at the neuromuscular junction?',
+          options: [
+            'Influx of calcium ions (Ca²⁺) through voltage-gated channels in the axon terminal upon action potential arrival',
+            'Efflux of potassium ions (K⁺) through leakage channels',
+            'Direct mechanical pulling of synaptic vesicles by actin filaments',
+            'Depolarization of the muscle sarcolemma motor end plate',
+          ],
+          correctIndex: 0,
+          explanation: 'When a nerve action potential reaches the axon terminal, it opens voltage-gated Ca²⁺ channels. Calcium influx triggers exocytosis of ACh vesicles into the synaptic cleft.',
+        },
+        {
+          question: 'During excitation-contraction coupling, calcium ions released from the terminal cisternae of the sarcoplasmic reticulum bind to which regulatory protein?',
+          options: [
+            'Troponin',
+            'Tropomyosin',
+            'Myosin heavy chain',
+            'Dystrophin',
+          ],
+          correctIndex: 0,
+          explanation: 'Calcium binds to troponin, causing a conformational change that pulls tropomyosin away from the active binding sites on actin filaments.',
+        },
+        {
+          question: 'What immediate event provides the mechanical energy for the myosin head power stroke during cross-bridge cycling?',
+          options: [
+            'Release of inorganic phosphate (Pi) and ADP from the myosin head',
+            'Binding of a new ATP molecule to the myosin ATPase site',
+            'Hydrolysis of ATP into ADP and Pi',
+            'Active transport of calcium back into the sarcoplasmic reticulum',
+          ],
+          correctIndex: 0,
+          explanation: 'The release of inorganic phosphate (Pi) triggers the conformational power stroke of the myosin head, pulling the thin filament toward the center of the sarcomere (M line).',
         },
       ],
     },
