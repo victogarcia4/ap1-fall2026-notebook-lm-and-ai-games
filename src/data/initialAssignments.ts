@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v51';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v51';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v51';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v52';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v52';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v52';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -64,8 +64,13 @@ export function generateInitialAssignments(): Assignment[] {
         }
       } else if (student.id === '7996309') { // Alvarez, Alexa Michelle (Section 1501)
         status = 'submitted';
-        notebookUrl = 'https://notebooklm.google.com/notebook/alexa-ap1-submission';
-        notebookNotes = 'Completed all 5 assets: Audio deep-dive, 60s video short script, slide deck, infographic map, and flashcard set.';
+        if (exam === 'LE1') {
+          notebookUrl = 'https://notebook.google.com/notebook/c6445f28-560c-4d4b-9c50-c41afafbf1a0';
+          notebookNotes = 'Describe the human body in anatomical position and apply directional terms correctly.';
+        } else {
+          notebookUrl = 'https://notebooklm.google.com/notebook/alexa-ap1-submission';
+          notebookNotes = 'Completed all 5 assets: Audio deep-dive, 60s video short script, slide deck, infographic map, and flashcard set.';
+        }
         if (exam === 'Final') {
           gameUrl = 'https://aistudio.google.com/game/alexa-cell-division-arcade';
           gameTitle = 'Cell Division & Mitosis Arcade Quest';
@@ -437,6 +442,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/119c7e1b-aff2-456d-ad90-c2e3956d726f';
           notebookNotes = 'List major classes of neurotransmitters (acetylcholine, amino acids, monoamines, neuropeptides, gases) and describe their primary mechanisms.';
+        } else if (exam === 'Final') {
+          status = 'submitted';
+          gameUrl = 'https://aistudio.google.com/apps/908cef3a-e588-4668-a426-73b369b1f632?fullscreenApplet=true&showAssistant=true&showPreview=true';
+          gameTitle = 'Nexus A&P: Homeostasis Master Game';
         }
       } else if (student.id === '7332513') { // Sisavath, Steven Lucky (Section 1501)
         if (exam === 'LE1') {
@@ -533,6 +542,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/0c78b773-d1d5-4cac-9e0b-3afff2fc2663';
           notebookNotes = 'Identify major bones and anatomical landmarks of the appendicular skeleton (pectoral girdle, upper limbs, pelvic girdle, lower limbs).';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/d603a41e-4947-4042-87e7-1b34dd0d5e05';
+          notebookNotes = 'Distinguish between excitatory postsynaptic potentials (EPSPs) and inhibitory postsynaptic potentials (IPSPs), and explain temporal and spatial summation.';
         }
       } else if (student.id === '7948782') { // Campa, Yarely (Section 1201)
         if (exam === 'LE1') {
@@ -1375,6 +1388,57 @@ export function generateInitialAIGames(): AIGameData[] {
           ],
           correctIndex: 0,
           explanation: 'The release of inorganic phosphate (Pi) triggers the conformational power stroke of the myosin head, pulling the thin filament toward the center of the sarcomere (M line).',
+        },
+      ],
+    },
+    {
+      id: 'game-blanca-guzman',
+      studentId: '7237055',
+      studentName: 'Guzman, Blanca E.',
+      studentSection: '1101',
+      sloText: 'Synthesize the fundamental homeostatic mechanisms that unify all organ systems in Human Anatomy & Physiology I.',
+      hapsCode: 'AP-19-A-07-01',
+      hapsNominal: 'Homeostatic mechanisms and organ systems integration',
+      gameTitle: 'Nexus A&P: Homeostasis Master Game',
+      gameType: 'clinical-scenario',
+      aiStudioUrl: 'https://aistudio.google.com/apps/908cef3a-e588-4668-a426-73b369b1f632?fullscreenApplet=true&showAssistant=true&showPreview=true',
+      geminiPrompt: 'Nexus A&P: An interactive homeostatic crisis and system balancing game testing mastery of negative feedback loops, set points, physiological sensors, integrators, and effectors across organ systems.',
+      status: 'submitted',
+      extraCreditScore: 100,
+      submittedAt: '2026-09-20',
+      questions: [
+        {
+          question: 'In homeostatic feedback mechanisms, what is the key functional distinction between negative feedback and positive feedback?',
+          options: [
+            'Negative feedback counteracts deviations from a set point to restore equilibrium, while positive feedback amplifies deviations toward a specific endpoint',
+            'Negative feedback always decreases blood pressure, while positive feedback increases heart rate',
+            'Negative feedback occurs only in endocrine glands, while positive feedback is restricted to neurons',
+            'Negative feedback causes organ dysfunction, while positive feedback produces homeostatic adaptation',
+          ],
+          correctIndex: 0,
+          explanation: 'Negative feedback loops reverse any divergence from the physiological set point to maintain stability, whereas positive feedback enhances the stimulus to complete a definitive physiological event (e.g., labor contractions or blood clotting).',
+        },
+        {
+          question: 'Which sequence correctly represents the flow of information through a canonical homeostatic control system?',
+          options: [
+            'Receptor (sensor) → Afferent pathway → Control center (integrator) → Efferent pathway → Effector',
+            'Effector → Efferent pathway → Control center → Afferent pathway → Receptor',
+            'Control center → Receptor → Afferent pathway → Effector → Efferent pathway',
+            'Stimulus → Effector → Afferent pathway → Control center → Response',
+          ],
+          correctIndex: 0,
+          explanation: 'Sensory receptors detect changes in a regulated variable and send signals along afferent pathways to the control center, which determines the set point and coordinates effector responses via efferent pathways.',
+        },
+        {
+          question: 'Which of the following is the primary control center for regulating core body temperature in the human body?',
+          options: [
+            'Hypothalamus',
+            'Medulla oblongata',
+            'Adrenal cortex',
+            'Thalamus',
+          ],
+          correctIndex: 0,
+          explanation: 'The preoptic and anterior regions of the hypothalamus act as the primary biological thermostat, receiving thermoreceptor input and directing cutaneous vasodilation, sweating, shivering, or vasoconstriction.',
         },
       ],
     },
