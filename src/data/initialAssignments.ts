@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v52';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v52';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v52';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v53';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v53';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v53';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -614,8 +614,20 @@ export function generateInitialAssignments(): Assignment[] {
       } else if (student.id === '7854589') { // Banks Jr, Christopher Kareen (Section 1101)
         if (exam === 'LE1') {
           status = 'submitted';
-          notebookUrl = 'https://notebook.google.com/notebook/d55a0d98-3a7a-41ce-85d0-388672544f2d';
+          notebookUrl = 'https://notebook.google.com/notebook/42074515-7c4e-48f8-a232-d15a4e03740f';
           notebookNotes = 'List and describe the location of major anatomical regions and abdominopelvic quadrants.';
+        }
+      } else if (student.id === '7837615') { // Robinson, Jax (Section 1101)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/990cde96-2338-4adb-954d-09541d5089e7';
+          notebookNotes = 'Describe the structure and function of cellular organelles (nucleus, ribosomes, ER, Golgi apparatus, mitochondria, lysosomes, peroxisomes).';
+        }
+      } else if (student.id === '7995287') { // Rochez, Samantha Nevaeh (Section 1101)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/bbf9aaaf-a9c4-453f-94df-de4d0e389149';
+          notebookNotes = 'Describe the structural components and cellular functions of the cytoskeleton (microfilaments, intermediate filaments, microtubules).';
         }
       } else if (student.id === '7895965') { // Hubbard, Shelby Gemese (Section 1101)
         if (exam === 'LE1') {
