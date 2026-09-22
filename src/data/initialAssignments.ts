@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v53';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v53';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v53';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v55';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v55';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v55';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -629,6 +629,16 @@ export function generateInitialAssignments(): Assignment[] {
           notebookUrl = 'https://notebook.google.com/notebook/bbf9aaaf-a9c4-453f-94df-de4d0e389149';
           notebookNotes = 'Describe the structural components and cellular functions of the cytoskeleton (microfilaments, intermediate filaments, microtubules).';
         }
+      } else if (student.id === '7946428') { // Okafor, Angel Kamsi (Section 1101)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/eb600c90-3471-4a17-9916-01b32b5b96a8?original_referer=https:%2F%2Fd2l.lonestar.edu%23';
+          notebookNotes = 'Define resting membrane potential (RMP) and explain how the Na+/K+ ATPase pump maintains it.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/ae91ee64-adda-41e0-9a9c-431c45fecea9';
+          notebookNotes = 'Describe the cellular processes of growth and keratinization in the epidermis.';
+        }
       } else if (student.id === '7895965') { // Hubbard, Shelby Gemese (Section 1101)
         if (exam === 'LE1') {
           status = 'submitted';
@@ -668,6 +678,12 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/fcff15d6-aa7b-44b7-9a7c-4ceaab462506';
           notebookNotes = 'Describe the physiologically important properties of water (solvency, thermal stability, reactivity, lubrication).';
+        }
+      } else if (student.id === '8043673') { // Iglesias, Camila (Section 1201)
+        if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/ebc99fbd-6f88-4be8-b604-e839fea9d2f9';
+          notebookNotes = 'Compare continuous conduction in unmyelinated axons with saltatory conduction in myelinated axons.';
         }
       }
 
