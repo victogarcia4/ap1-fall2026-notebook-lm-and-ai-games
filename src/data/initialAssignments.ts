@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v55';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v55';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v55';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v56';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v56';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v56';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -680,7 +680,11 @@ export function generateInitialAssignments(): Assignment[] {
           notebookNotes = 'Describe the physiologically important properties of water (solvency, thermal stability, reactivity, lubrication).';
         }
       } else if (student.id === '8043673') { // Iglesias, Camila (Section 1201)
-        if (exam === 'LE4') {
+        if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/57c739ba-eb39-4d73-9188-7f5b14897f26';
+          notebookNotes = 'Classify bones of the human skeleton based on their shape (long, short, flat, irregular, sesamoid).';
+        } else if (exam === 'LE4') {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/ebc99fbd-6f88-4be8-b604-e839fea9d2f9';
           notebookNotes = 'Compare continuous conduction in unmyelinated axons with saltatory conduction in myelinated axons.';
