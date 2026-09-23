@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v56';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v56';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v56';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v57';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v57';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v57';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -432,6 +432,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/68b8850d-ede6-4f6b-a28a-e33e820074b9';
           notebookNotes = 'List the organ systems of the human body and summarize their primary functions.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/199c1565-1716-415e-83c2-2684df6e9366';
+          notebookNotes = 'Describe the anaerobic pathway of lactic acid fermentation and compare its energy yield to aerobic respiration.';
         }
       } else if (student.id === '7237055') { // Guzman, Blanca E. (Section 1101)
         if (exam === 'LE2') {
