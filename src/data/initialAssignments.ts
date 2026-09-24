@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v57';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v57';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v57';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v59';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v59';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v59';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -338,6 +338,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/ada491dd-74c1-4603-9789-6184106d1a25';
           notebookNotes = 'Define the law of mass balance and relate it to physiological homeostasis.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/5ffc0a6d-3f32-4123-a831-9324bd5e7fb3';
+          notebookNotes = 'Name the types of epithelium (simple/stratified squamous, cuboidal, columnar, pseudostratified, transitional) and identify organs where each is found.';
         }
       } else if (student.id === '8094555') { // Regalado, Mia Pamela (Section 1201)
         if (exam === 'LE1') {
@@ -438,7 +442,11 @@ export function generateInitialAssignments(): Assignment[] {
           notebookNotes = 'Describe the anaerobic pathway of lactic acid fermentation and compare its energy yield to aerobic respiration.';
         }
       } else if (student.id === '7237055') { // Guzman, Blanca E. (Section 1101)
-        if (exam === 'LE2') {
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/b55387e1-7153-46d3-9a1a-0d6028ea1ce2';
+          notebookNotes = 'Define acid, base, buffer, and interpret the pH scale with respect to hydrogen ion concentration.';
+        } else if (exam === 'LE2') {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/c98bda8d-6994-4ea3-abf3-03aa33d6b31a';
           notebookNotes = 'Distinguish among the three types of muscle tissue (skeletal, cardiac, smooth) with respect to histology, location, and control.';
@@ -642,6 +650,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/ae91ee64-adda-41e0-9a9c-431c45fecea9';
           notebookNotes = 'Describe the cellular processes of growth and keratinization in the epidermis.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/07e9bdef-24ba-449a-ae46-8749b5288930?authuser=3';
+          notebookNotes = 'Compare and contrast the structure, location, histology, and control of skeletal, cardiac, and smooth muscle tissue.';
         }
       } else if (student.id === '7895965') { // Hubbard, Shelby Gemese (Section 1101)
         if (exam === 'LE1') {
@@ -692,6 +704,16 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/ebc99fbd-6f88-4be8-b604-e839fea9d2f9';
           notebookNotes = 'Compare continuous conduction in unmyelinated axons with saltatory conduction in myelinated axons.';
+        }
+      } else if (student.id === '8029112') { // Aviles, Carmen Stephany (Section 1201)
+        if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/694d4573-a3c5-4aa6-bc97-f1458615e912';
+          notebookNotes = 'Explain the central role of ATP in coupled metabolic reactions.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/bea8b184-4647-4937-9c08-babee6fd610c';
+          notebookNotes = 'Identify and describe the structural components of a long bone (diaphysis, epiphyses, metaphyses, articular cartilage, periosteum, endosteum, medullary cavity).';
         }
       }
 
