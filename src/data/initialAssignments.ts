@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v59';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v59';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v59';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v60';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v60';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v60';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -714,6 +714,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/bea8b184-4647-4937-9c08-babee6fd610c';
           notebookNotes = 'Identify and describe the structural components of a long bone (diaphysis, epiphyses, metaphyses, articular cartilage, periosteum, endosteum, medullary cavity).';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/a9946a44-339e-439c-85ce-93115ef04960';
+          notebookNotes = 'Describe the anatomy of a multipolar neuron (cell body/soma, dendrites, axon, axon hillock, initial segment, synaptic end bulbs).';
         }
       }
 
