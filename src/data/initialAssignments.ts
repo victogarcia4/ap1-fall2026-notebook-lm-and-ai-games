@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v60';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v60';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v60';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v61';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v61';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v61';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -342,6 +342,14 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/5ffc0a6d-3f32-4123-a831-9324bd5e7fb3';
           notebookNotes = 'Name the types of epithelium (simple/stratified squamous, cuboidal, columnar, pseudostratified, transitional) and identify organs where each is found.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/9d00140d-1458-4249-a3d2-5a6537c96c6a';
+          notebookNotes = 'Explain the sequential steps involved in bone fracture repair (hematoma, fibrocartilaginous callus, bony callus, bone remodeling).';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/5920ce93-5e30-4574-ba85-462f3774b9b1';
+          notebookNotes = 'Explain the ionic basis and phases of an action potential (depolarization, repolarization, hyperpolarization, absolute and relative refractory periods).';
         }
       } else if (student.id === '8094555') { // Regalado, Mia Pamela (Section 1201)
         if (exam === 'LE1') {
