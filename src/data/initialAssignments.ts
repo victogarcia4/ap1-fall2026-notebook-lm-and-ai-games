@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v61';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v61';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v61';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v62';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v62';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v62';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -630,6 +630,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/0d8e48cd-33cf-49bb-bf05-0ba930959218?pli=1';
           notebookNotes = 'Define the genetic code, transcription, and translation, detailing how genetic information directs protein synthesis.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/ba86f672-0882-4113-94e7-154b8994a09d?original_referer=https:%2F%2Fmyaccount.google.com%23';
+          notebookNotes = 'Explain the central role of ATP in coupled metabolic reactions.';
         }
       } else if (student.id === '7854589') { // Banks Jr, Christopher Kareen (Section 1101)
         if (exam === 'LE1') {
