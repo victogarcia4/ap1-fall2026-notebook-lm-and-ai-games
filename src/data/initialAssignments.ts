@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v63';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v63';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v63';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v64';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v64';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v64';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -727,8 +727,18 @@ export function generateInitialAssignments(): Assignment[] {
           notebookUrl = 'https://notebook.google.com/notebook/fcff15d6-aa7b-44b7-9a7c-4ceaab462506';
           notebookNotes = 'Describe the physiologically important properties of water (solvency, thermal stability, reactivity, lubrication).';
         }
+      } else if (student.id === '8099509') { // Curiel, Valerie Angela (Section 1201)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/9c385ba8-e564-4761-b6a4-37467e2eb8e0?original_referer=https:%2F%2Fd2l.lonestar.edu%23';
+          notebookNotes = 'List the organ systems of the human body and summarize their primary functions.';
+        }
       } else if (student.id === '8043673') { // Iglesias, Camila (Section 1201)
-        if (exam === 'LE3') {
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/54b64743-e973-42f1-b5e7-13066ce325fe';
+          notebookNotes = 'Describe the charge, mass, and location of subatomic particles (protons, neutrons, electrons) in an atom.';
+        } else if (exam === 'LE3') {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/57c739ba-eb39-4d73-9188-7f5b14897f26';
           notebookNotes = 'Classify bones of the human skeleton based on their shape (long, short, flat, irregular, sesamoid).';
