@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v62';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v62';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v62';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v63';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v63';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v63';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -448,6 +448,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/199c1565-1716-415e-83c2-2684df6e9366';
           notebookNotes = 'Describe the anaerobic pathway of lactic acid fermentation and compare its energy yield to aerobic respiration.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/fbcdb247-6151-47f1-ba69-5df0ffb9d573';
+          notebookNotes = 'Describe how the location and distribution of red and yellow bone marrow varies across a lifetime.';
         }
       } else if (student.id === '7237055') { // Guzman, Blanca E. (Section 1101)
         if (exam === 'LE1') {
@@ -634,6 +638,22 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/ba86f672-0882-4113-94e7-154b8994a09d?original_referer=https:%2F%2Fmyaccount.google.com%23';
           notebookNotes = 'Explain the central role of ATP in coupled metabolic reactions.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/5f6e2393-faac-40f9-bd03-ca565a0a3430';
+          notebookNotes = 'Interpret graphs of tension vs. stimulus frequency and explain treppe, wave summation, incomplete tetanus, and complete tetanus.';
+        }
+      } else if (student.id === '8008219') { // Lambarria, Ana Daniela (Section 1101)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/b729a57d-eb6d-47bf-81ba-316f9478e5a9';
+          notebookNotes = 'Explain the four levels of protein structure (primary, secondary, tertiary, quaternary) and the consequences of denaturation.';
+        }
+      } else if (student.id === '0501045') { // Martin, John Orlando (Section 1101)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/1c0be0f5-c6e6-4a17-b33c-8b64d7577626?authuser=1';
+          notebookNotes = 'Compare and contrast simple diffusion, facilitated diffusion, osmosis, and active transport mechanisms.';
         }
       } else if (student.id === '7854589') { // Banks Jr, Christopher Kareen (Section 1101)
         if (exam === 'LE1') {
