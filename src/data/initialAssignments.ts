@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v64';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v64';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v64';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v66';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v66';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v66';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -710,6 +710,16 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/ef2bc406-a96a-40af-92c9-7af62bae6207';
           notebookNotes = 'Define acid, base, buffer, and interpret the pH scale with respect to hydrogen ion concentration.';
+        }
+      } else if (student.id === '8157078') { // Mcintosh, Fatinah Mcintosh Aminah (Section 1501)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/54c68003-1a57-44ce-8cc1-66ea0be6f2c9';
+          notebookNotes = 'Explain the mechanisms of covalent, ionic, and hydrogen chemical bonds with biological examples.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/c6f9f661-5fa6-4833-8591-9e3e8f16f071';
+          notebookNotes = 'Describe the structural components common to all connective tissues: cells, ground substance, and protein fibers.';
         }
       } else if (student.id === '8127365') { // Duarte Lucas, Fatima (Section 1201)
         if (exam === 'LE1') {
