@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v66';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v66';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v66';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v67';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v67';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v67';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -642,6 +642,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/5f6e2393-faac-40f9-bd03-ca565a0a3430';
           notebookNotes = 'Interpret graphs of tension vs. stimulus frequency and explain treppe, wave summation, incomplete tetanus, and complete tetanus.';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/141719a3-41f6-4dda-aa88-8433706a6c48';
+          notebookNotes = 'Describe the somatic receptors associated with touch, pressure, vibration, temperature, pain, and proprioception.';
         }
       } else if (student.id === '8008219') { // Lambarria, Ana Daniela (Section 1101)
         if (exam === 'LE1') {
