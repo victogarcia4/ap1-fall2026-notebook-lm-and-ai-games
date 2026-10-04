@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v67';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v67';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v67';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v68';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v68';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v68';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -599,6 +599,16 @@ export function generateInitialAssignments(): Assignment[] {
           notebookUrl = 'https://notebook.google.com/notebook/a50403d2-a5fa-4243-bfdf-71ee5490f8fd';
           notebookNotes = 'Identify the 12 pairs of cranial nerves by Roman numeral and name, classifying their functional fiber types (sensory, motor, mixed) and major actions.';
         }
+      } else if (student.id === '8081836') { // Seriki, Zainab (Section 1201)
+        if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/6b5dff54-4d47-4e84-9f2b-d2b9a589cbe8';
+          notebookNotes = 'Define resting membrane potential (RMP) and explain how the Na+/K+ ATPase pump maintains it.';
+        } else if (exam === 'Final') {
+          status = 'submitted';
+          gameUrl = 'https://aistudio.google.com/apps/6c2c6d3c-510d-4e07-bbb5-14c22ba608bc?fullscreenApplet=true&showAssistant=true&showPreview=true';
+          gameTitle = 'Action Potential Odyssey: The Neural Reflex Arc';
+        }
       } else if (student.id === '8002796') { // Williams, Asia Amyrie (Section 1501)
         if (exam === 'LE1') {
           status = 'submitted';
@@ -779,6 +789,7 @@ export function generateInitialAssignments(): Assignment[] {
 
       const isSubmitted = status === 'submitted' || status === 'reviewed';
       const isJesusLE4 = (student.id === '7989206' || student.name.includes('Jesus')) && exam === 'LE4';
+      const isZainabLE4 = student.id === '8081836' && exam === 'LE4';
       const isTaft = student.id === '7687626';
 
       let finalSloId = slo.id;
@@ -793,6 +804,12 @@ export function generateInitialAssignments(): Assignment[] {
         finalHapsCode = 'AP-19-N-04-03';
         finalHapsNominal = 'Countercurrent multiplier & urea trapping under ADH';
         finalChapter = 'Renal Physiology / ADH';
+      } else if (isZainabLE4) {
+        finalSloId = 'LE4-SLO-RMP';
+        finalSloText = 'Define resting membrane potential (RMP) and explain how the Na+/K+ ATPase pump maintains it.';
+        finalHapsCode = 'AP-19-H-04-01';
+        finalHapsNominal = 'Resting membrane potential across neuronal membranes';
+        finalChapter = 'Chapter 10';
       } else if (isTaft) {
         if (exam === 'LE1') {
           finalSloId = 'LE1-SLO-21';
@@ -1557,6 +1574,57 @@ export function generateInitialAIGames(): AIGameData[] {
           ],
           correctIndex: 0,
           explanation: 'The preoptic and anterior regions of the hypothalamus act as the primary biological thermostat, receiving thermoreceptor input and directing cutaneous vasodilation, sweating, shivering, or vasoconstriction.',
+        },
+      ],
+    },
+    {
+      id: 'game-zainab-seriki',
+      studentId: '8081836',
+      studentName: 'Seriki, Zainab',
+      studentSection: '1201',
+      sloText: 'Define resting membrane potential (RMP) and explain how the Na+/K+ ATPase pump maintains it.',
+      hapsCode: 'AP-19-H-04-01',
+      hapsNominal: 'Resting membrane potential & neural reflex arc',
+      gameTitle: 'Action Potential Odyssey: The Neural Reflex Arc',
+      gameType: 'clinical-scenario',
+      aiStudioUrl: 'https://aistudio.google.com/apps/6c2c6d3c-510d-4e07-bbb5-14c22ba608bc?fullscreenApplet=true&showAssistant=true&showPreview=true',
+      geminiPrompt: 'Action Potential Odyssey: The Neural Reflex Arc — Master neurophysiology, resting membrane potential dynamics, the Na+/K+ ATPase pump, action potential propagation, and somatic reflex arcs in an interactive educational adventure.',
+      status: 'submitted',
+      extraCreditScore: 100,
+      submittedAt: '2026-10-04',
+      questions: [
+        {
+          question: 'What is the primary role of the Na+/K+ ATPase electrogenic pump in establishing and maintaining the neuronal resting membrane potential (RMP)?',
+          options: [
+            'It pumps 3 Na+ ions out of the cell for every 2 K+ ions pumped in against their electrochemical gradients, utilizing ATP hydrolysis',
+            'It moves 3 K+ ions out and 2 Na+ ions into the cell down their chemical gradients without ATP',
+            'It actively exchanges equal amounts of Na+ and K+ across the axolemma',
+            'It pumps Ca2+ into the synaptic cleft to initiate vesicular exocytosis',
+          ],
+          correctIndex: 0,
+          explanation: 'The Na+/K+ ATPase pump exports 3 Na+ ions and imports 2 K+ ions per ATP consumed, maintaining negative intracellular charge relative to extracellular fluid and preserving chemical concentration gradients.',
+        },
+        {
+          question: 'Which sequence correctly depicts the five essential anatomical components of a somatic reflex arc?',
+          options: [
+            'Sensory receptor → Sensory (afferent) neuron → Integrating center → Motor (efferent) neuron → Effector',
+            'Motor neuron → Effector → Integrating center → Sensory neuron → Receptor',
+            'Integrating center → Receptor → Afferent neuron → Efferent neuron → Effector',
+            'Effector → Receptor → Sensory neuron → Motor neuron → Integrating center',
+          ],
+          correctIndex: 0,
+          explanation: 'A classical reflex arc begins with a sensory receptor detecting a stimulus, relaying action potentials via an afferent neuron to an integrating center (CNS), which directs motor output along an efferent neuron to the effector organ.',
+        },
+        {
+          question: 'During the depolarization phase of an action potential along an axon, which voltage-gated ion channels rapidly open?',
+          options: [
+            'Voltage-gated Na+ channels',
+            'Voltage-gated K+ channels',
+            'Chemically-gated Cl- channels',
+            'Mechanically-gated Ca2+ channels',
+          ],
+          correctIndex: 0,
+          explanation: 'When threshold voltage (~ -55 mV) is reached at the axon hillock/initial segment, voltage-gated Na+ channels rapidly open, allowing Na+ influx to drive the membrane potential toward +30 mV.',
         },
       ],
     },
