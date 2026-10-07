@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v68';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v68';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v68';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v69';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v69';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v69';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -378,6 +378,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/8636de56-7548-41db-86b5-a17039252e7d';
           notebookNotes = 'Explain the phases of the cell cycle (Interphase: G1, S, G2, and M phase).';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/19e3e3d4-70e7-4b19-af3d-eb162b0de07d';
+          notebookNotes = 'Explain how the integumentary system participates in thermoregulation through dermal blood flow and sweating.';
         }
       } else if (student.id === '7922888') { // Cruz, Katherine (Section 1101)
         if (exam === 'LE1') {
@@ -504,6 +508,14 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/b435e5b4-145a-4ad6-bd03-360699d3fa15';
           notebookNotes = 'Explain why negative feedback is the predominant homeostatic regulatory mechanism in the body.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/eab776e0-3414-443a-ada1-a6c93b0a6659';
+          notebookNotes = 'Describe the general characteristics and structural classification of epithelial tissues.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/6183753c-d0cc-4be1-b132-c081deac4502';
+          notebookNotes = 'Explain the roles of parathyroid hormone (PTH), calcitriol, and calcitonin in plasma calcium regulation and bone remodeling.';
         }
       } else if (student.id === '7356820') { // Gentry, Quincy Jerrod (Section 1501)
         if (exam === 'LE1') {
@@ -552,6 +564,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/4c335af4-a1cf-48a7-9a08-816ae55b4644?authuser=1';
           notebookNotes = 'Explain the mechanisms of covalent, ionic, and hydrogen chemical bonds with biological examples (flashcards generated from selected sources).';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/f9be872c-95cb-4081-a592-5a8c2696a27c';
+          notebookNotes = 'Describe the structural components common to all connective tissues: cells, ground substance, and protein fibers.';
         }
       } else if (student.id === '8031930') { // Guzman, Ashlie Nancie (Section 1101)
         if (exam === 'LE1') {
@@ -686,6 +702,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/bbf9aaaf-a9c4-453f-94df-de4d0e389149';
           notebookNotes = 'Describe the structural components and cellular functions of the cytoskeleton (microfilaments, intermediate filaments, microtubules).';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/53c67ff3-847c-47f0-b2a5-1822a3edb43d';
+          notebookNotes = 'Describe the accessory structures of the skin and explain their functions (hair follicles, sebaceous glands, sweat glands, and nails)';
         }
       } else if (student.id === '7946428') { // Okafor, Angel Kamsi (Section 1101)
         if (exam === 'LE1') {
@@ -706,6 +726,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/b59c93a8-3e4e-499a-bec9-825e2e6d0425';
           notebookNotes = 'Compare and contrast lipids (triglycerides, phospholipids, steroids) in molecular structure and cellular roles.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/a2fef656-3e6f-4b85-a8b2-eb5f14d07c90';
+          notebookNotes = 'Describe the structure, locations, and functions of mucous, serous, cutaneous, and synovial membranes.';
         }
       } else if (student.id === '8112484') { // Reed, Gabrielle Nicole (Section 1101)
         if (exam === 'LE1') {
