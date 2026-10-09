@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v69';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v69';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v69';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v70';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v70';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v70';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -67,6 +67,9 @@ export function generateInitialAssignments(): Assignment[] {
         if (exam === 'LE1') {
           notebookUrl = 'https://notebook.google.com/notebook/c6445f28-560c-4d4b-9c50-c41afafbf1a0';
           notebookNotes = 'Describe the human body in anatomical position and apply directional terms correctly.';
+        } else if (exam === 'LE2') {
+          notebookUrl = 'https://notebook.google.com/notebook/aea5499e-89f8-417d-83ac-af75d4895cda';
+          notebookNotes = 'Compare and contrast anabolism and catabolism in cellular metabolism.';
         } else {
           notebookUrl = 'https://notebooklm.google.com/notebook/alexa-ap1-submission';
           notebookNotes = 'Completed all 5 assets: Audio deep-dive, 60s video short script, slide deck, infographic map, and flashcard set.';
@@ -654,6 +657,18 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/b71ba69e-6564-457f-9cf3-9e348c8f0ef1';
           notebookNotes = 'List the organ systems of the human body and summarize their primary functions.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/7c6fb33d-25bd-4ef1-a2cf-d7603ec24790';
+          notebookNotes = 'Describe the anaerobic pathway of lactic acid fermentation and compare its energy yield to aerobic respiration.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/9e4f1252-be03-4c2b-a967-b7478562dd87';
+          notebookNotes = 'Describe how the location and distribution of red and yellow bone marrow varies across a lifetime.';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/ab5d2058-8764-46a1-bd9e-216286220819';
+          notebookNotes = 'Describe the structure and functions of myelin, the neurilemma, and nodes of Ranvier.';
         }
       } else if (student.id === '7937808') { // Torres, Katherine Stephanie (Section 1101)
         if (exam === 'LE1') {
@@ -780,6 +795,16 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/9c385ba8-e564-4761-b6a4-37467e2eb8e0?original_referer=https:%2F%2Fd2l.lonestar.edu%23';
           notebookNotes = 'List the organ systems of the human body and summarize their primary functions.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/b032c4a7-32e6-42e8-adc7-3c1fb32bc4e6';
+          notebookNotes = 'Describe the anaerobic pathway of lactic acid fermentation and compare its energy yield to aerobic respiration.';
+        }
+      } else if (student.id === '7057444') { // Curvey, Denae Jovan (Section 1201)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/2531740a-b1cd-44c5-8f5e-912075f62774';
+          notebookNotes = 'Define homeostasis and explain the components of a homeostatic mechanism (receptor, control center, effector).';
         }
       } else if (student.id === '8043673') { // Iglesias, Camila (Section 1201)
         if (exam === 'LE1') {
