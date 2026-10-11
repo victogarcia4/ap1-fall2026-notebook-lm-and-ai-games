@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v70';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v70';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v70';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v71';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v71';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v71';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -651,6 +651,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/c4c0d7c1-3b35-42a9-b08b-e9063852e497';
           notebookNotes = 'Compare and contrast positive and negative feedback mechanisms, providing physiological examples of each.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/52063ebd-c94d-4ed6-a743-d7228d18dad6';
+          notebookNotes = 'List the four major tissue types in the body (epithelial, connective, muscle, nervous) and indicate their primary locations and functions.';
         }
       } else if (student.id === '8035519') { // Carrizalez, Dulce Maria (Section 1501)
         if (exam === 'LE1') {
@@ -773,6 +777,12 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/c6f9f661-5fa6-4833-8591-9e3e8f16f071';
           notebookNotes = 'Describe the structural components common to all connective tissues: cells, ground substance, and protein fibers.';
+        }
+      } else if (student.id === '7772582') { // Granados, Kayla Yaretzy (Section 1501)
+        if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/f8a0607c-6b72-4acb-b587-ccec183fc5a1';
+          notebookNotes = 'Compare and contrast exocrine glands (merocrine, apocrine, holocrine) and endocrine glands.';
         }
       } else if (student.id === '8127365') { // Duarte Lucas, Fatima (Section 1201)
         if (exam === 'LE1') {
