@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v71';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v71';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v71';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v72';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v72';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v72';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -277,6 +277,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/a8d9f660-4ef1-4ebe-837d-23ace1b9aef2';
           notebookNotes = 'Define the law of mass balance and relate it to physiological homeostasis.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/acc3ac92-9f99-4fb7-9987-b84f7218c5e3';
+          notebookNotes = 'Name the types of epithelium (simple/stratified squamous, cuboidal, columnar, pseudostratified, transitional) and identify organs where each is found.';
         }
       } else if (student.id === '7959119') { // Davis, Dana Yvette (Section 1501)
         if (exam === 'LE2') {
