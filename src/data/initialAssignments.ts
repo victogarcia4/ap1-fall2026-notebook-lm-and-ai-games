@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v72';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v72';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v72';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v74';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v74';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v74';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -99,6 +99,16 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           gameUrl = 'https://aistudio.google.com/apps/44115d52-f410-474b-a899-166bb751cbf8?showAssistant=true&showPreview=true&fullscreenApplet=true';
           gameTitle = 'CalciBalance: Calcium Homeostasis & Organ Regulation Lab';
+        }
+      } else if (student.id === '8121338') { // Baker, Xavier Lemarc (Section 1101)
+        if (exam === 'LE1') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/d42d6729-e808-4222-9178-ed44b9e7d6d2?pli=1';
+          notebookNotes = 'Identify and define anatomical planes (sagittal, coronal, transverse) and major body cavities.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/97c95ce1-6a11-4440-a955-5351ff71f36b';
+          notebookNotes = 'Explain the central role of ATP in coupled metabolic reactions.';
         }
       } else if (student.id === '7965782') { // Cabrera, Daniela Araceli (Section 1101)
         if (exam === 'LE1') {
@@ -765,6 +775,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/abc745af-8247-40b3-a541-df7818fb6b24';
           notebookNotes = 'Describe the events in each phase of somatic cell division (mitosis: prophase, metaphase, anaphase, telophase and cytokinesis).';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/fee9be47-4035-4091-a65d-ac1afa2933d3';
+          notebookNotes = 'Distinguish among first-, second-, and third-degree burns and describe the healing process for each.';
         }
       } else if (student.id === '8036488') { // Richard, Alayzia (Section 1501)
         if (exam === 'LE1') {
@@ -793,6 +807,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/3b4bffd9-aa6d-45ec-b85d-d84675f48f5c';
           notebookNotes = 'Explain why negative feedback is the predominant homeostatic regulatory mechanism in the body.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/61abf449-aea4-4cc8-838f-738b9f6b9efd';
+          notebookNotes = 'Describe the general characteristics and structural classification of epithelial tissues.';
         } else if (exam === 'Final') {
           status = 'submitted';
           gameUrl = 'https://skeletal-muscle-contraction-game.ai.studio/';
