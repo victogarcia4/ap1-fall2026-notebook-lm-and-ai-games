@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v74';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v74';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v74';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v75';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v75';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v75';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -633,7 +633,11 @@ export function generateInitialAssignments(): Assignment[] {
           notebookNotes = 'Identify the 12 pairs of cranial nerves by Roman numeral and name, classifying their functional fiber types (sensory, motor, mixed) and major actions.';
         }
       } else if (student.id === '8081836') { // Seriki, Zainab (Section 1201)
-        if (exam === 'LE4') {
+        if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/576a97c0-a9ac-4da1-b0a3-5f4e75ad50d9';
+          notebookNotes = 'Describe the cellular processes of growth and keratinization in the epidermis.';
+        } else if (exam === 'LE4') {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/6b5dff54-4d47-4e84-9f2b-d2b9a589cbe8';
           notebookNotes = 'Define resting membrane potential (RMP) and explain how the Na+/K+ ATPase pump maintains it.';
