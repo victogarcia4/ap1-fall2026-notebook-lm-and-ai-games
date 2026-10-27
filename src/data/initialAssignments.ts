@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v75';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v75';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v75';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v76';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v76';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v76';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -585,6 +585,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/f9be872c-95cb-4081-a592-5a8c2696a27c';
           notebookNotes = 'Describe the structural components common to all connective tissues: cells, ground substance, and protein fibers.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/f14bc456-66ba-4cc9-9612-09dd93142fa3';
+          notebookNotes = 'Identify major bones and anatomical landmarks of the axial skeleton (skull, vertebral column, thoracic cage).';
         }
       } else if (student.id === '8031930') { // Guzman, Ashlie Nancie (Section 1101)
         if (exam === 'LE1') {
@@ -673,6 +677,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/52063ebd-c94d-4ed6-a743-d7228d18dad6';
           notebookNotes = 'List the four major tissue types in the body (epithelial, connective, muscle, nervous) and indicate their primary locations and functions.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/082bb3a3-838d-47e9-95e7-d98ddf33dd96';
+          notebookNotes = 'Compare and contrast interstitial (lengthwise) and appositional (width) bone growth.';
         }
       } else if (student.id === '8035519') { // Carrizalez, Dulce Maria (Section 1501)
         if (exam === 'LE1') {
@@ -721,6 +729,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/1c0be0f5-c6e6-4a17-b33c-8b64d7577626?authuser=1';
           notebookNotes = 'Compare and contrast simple diffusion, facilitated diffusion, osmosis, and active transport mechanisms.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/bc04cd3d-ce12-470e-b027-ab05611a73c4';
+          notebookNotes = 'Identify and describe the layers of the epidermis, noting differences in thin versus thick skin (stratum basale to stratum corneum).';
         }
       } else if (student.id === '7854589') { // Banks Jr, Christopher Kareen (Section 1101)
         if (exam === 'LE1') {
@@ -805,6 +817,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/f8a0607c-6b72-4acb-b587-ccec183fc5a1';
           notebookNotes = 'Compare and contrast exocrine glands (merocrine, apocrine, holocrine) and endocrine glands.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/1cc1b30a-8ad7-4264-b7b3-ad703ac06b45';
+          notebookNotes = 'Classify bones of the human skeleton based on their shape (long, short, flat, irregular, sesamoid).';
         }
       } else if (student.id === '8127365') { // Duarte Lucas, Fatima (Section 1201)
         if (exam === 'LE1') {
