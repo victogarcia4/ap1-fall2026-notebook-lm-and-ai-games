@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v78';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v78';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v78';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v79';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v79';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v79';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -583,6 +583,14 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/60553a35-8d34-4ec0-96cb-5cf9e401111b';
           notebookNotes = 'Describe the chemical composition and fluid mosaic model of the plasma membrane.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/a468e9fb-a309-4d0e-b552-44fed8803692';
+          notebookNotes = 'Describe the general functions of the integument (protection, thermoregulation, sensory reception, excretion, vitamin D synthesis).';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/180555d3-a619-4fec-8bbc-92879726e987';
+          notebookNotes = 'Predict the pathophysiological changes and consequences of joint disorders such as osteoarthritis and rheumatoid arthritis.';
         }
       } else if (student.id === '8150234') { // Franco, Regina (Section 1101)
         if (exam === 'LE1') {
