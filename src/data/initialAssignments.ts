@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v76';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v76';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v76';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v78';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v78';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v78';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -109,6 +109,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/97c95ce1-6a11-4440-a955-5351ff71f36b';
           notebookNotes = 'Explain the central role of ATP in coupled metabolic reactions.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/3c5a1dc0-d574-4c8a-82e3-76965107f4a9';
+          notebookNotes = 'Identify and describe the structural components of a long bone (diaphysis, epiphyses, metaphyses, articular cartilage, periosteum, endosteum, medullary cavity).';
         }
       } else if (student.id === '7965782') { // Cabrera, Daniela Araceli (Section 1101)
         if (exam === 'LE1') {
@@ -399,6 +403,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/19e3e3d4-70e7-4b19-af3d-eb162b0de07d';
           notebookNotes = 'Explain how the integumentary system participates in thermoregulation through dermal blood flow and sweating.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/37f10c22-4edb-47df-8331-f06adce300fa';
+          notebookNotes = 'Interpret a graph of tension vs. stimulus intensity and explain motor unit recruitment and the size principle.';
         }
       } else if (student.id === '7922888') { // Cruz, Katherine (Section 1101)
         if (exam === 'LE1') {
@@ -613,6 +621,14 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/b1b8dfd1-3c40-412d-ac52-ce0cf1d6554c';
           notebookNotes = 'Describe the major levels of structural organization in the human organism from chemical to organismal.';
+        } else if (exam === 'LE2') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/b49cc652-2df6-4109-96db-256d9f753ed4';
+          notebookNotes = 'Explain the phases of cellular respiration: glycolysis, the citric acid cycle (Krebs cycle), and oxidative phosphorylation.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/eebfd954-731a-4804-8ccd-1685a9a6e1bc';
+          notebookNotes = 'Identify the microscopic structure of compact bone (osteons, concentric lamellae, central canal, canaliculi, lacunae) and spongy bone (trabeculae).';
         } else if (exam === 'Final') {
           status = 'submitted';
           gameUrl = 'https://aistudio.google.com/apps/6a29bb9e-50d9-4e28-bd83-5ee1b22881ae?fullscreenApplet=true';
@@ -733,6 +749,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/bc04cd3d-ce12-470e-b027-ab05611a73c4';
           notebookNotes = 'Identify and describe the layers of the epidermis, noting differences in thin versus thick skin (stratum basale to stratum corneum).';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/9e28669d-881f-4fdc-97af-596a5296adab';
+          notebookNotes = 'Describe the major functions of muscle tissue (producing body movements, stabilizing posture, storing and moving substances, thermogenesis).';
         }
       } else if (student.id === '7854589') { // Banks Jr, Christopher Kareen (Section 1101)
         if (exam === 'LE1') {
@@ -745,6 +765,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/990cde96-2338-4adb-954d-09541d5089e7';
           notebookNotes = 'Describe the structure and function of cellular organelles (nucleus, ribosomes, ER, Golgi apparatus, mitochondria, lysosomes, peroxisomes).';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/80f736e0-0a18-4f0e-9ec6-8caa75502b1f';
+          notebookNotes = 'Describe the microscopic components within a skeletal muscle fiber (sarcolemma, T-tubules, sarcoplasmic reticulum, terminal cisternae, triads).';
         }
       } else if (student.id === '7995287') { // Rochez, Samantha Nevaeh (Section 1101)
         if (exam === 'LE1') {
@@ -755,6 +779,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/53c67ff3-847c-47f0-b2a5-1822a3edb43d';
           notebookNotes = 'Describe the accessory structures of the skin and explain their functions (hair follicles, sebaceous glands, sweat glands, and nails)';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/b2a1ccc5-4f7b-4e04-a598-161a701e4cd7';
+          notebookNotes = 'Describe the arrangement and molecular composition of a sarcomere: actin, myosin, troponin, tropomyosin, Z-discs, I-bands, A-bands, H-zones, M-lines.';
         }
       } else if (student.id === '7946428') { // Okafor, Angel Kamsi (Section 1101)
         if (exam === 'LE1') {
@@ -779,6 +807,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/a2fef656-3e6f-4b85-a8b2-eb5f14d07c90';
           notebookNotes = 'Describe the structure, locations, and functions of mucous, serous, cutaneous, and synovial membranes.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/6e1c5474-0ee2-4aee-8982-975bdaa475ee';
+          notebookNotes = 'Explain the relationship between the anatomical and functional classifications of joints.';
         }
       } else if (student.id === '8112484') { // Reed, Gabrielle Nicole (Section 1101)
         if (exam === 'LE1') {
@@ -831,6 +863,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/61abf449-aea4-4cc8-838f-738b9f6b9efd';
           notebookNotes = 'Describe the general characteristics and structural classification of epithelial tissues.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/c629c396-e233-44ac-b1a1-28eabe905610';
+          notebookNotes = 'Explain the roles of parathyroid hormone (PTH), calcitriol, and calcitonin in plasma calcium regulation and bone remodeling.';
         } else if (exam === 'Final') {
           status = 'submitted';
           gameUrl = 'https://skeletal-muscle-contraction-game.ai.studio/';
@@ -851,6 +887,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/b032c4a7-32e6-42e8-adc7-3c1fb32bc4e6';
           notebookNotes = 'Describe the anaerobic pathway of lactic acid fermentation and compare its energy yield to aerobic respiration.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/6ae6a0c9-6e12-467c-90b6-20f0508b159f';
+          notebookNotes = 'Describe how the location and distribution of red and yellow bone marrow varies across a lifetime.';
         }
       } else if (student.id === '7057444') { // Curvey, Denae Jovan (Section 1201)
         if (exam === 'LE1') {
@@ -891,6 +931,7 @@ export function generateInitialAssignments(): Assignment[] {
       const isSubmitted = status === 'submitted' || status === 'reviewed';
       const isJesusLE4 = (student.id === '7989206' || student.name.includes('Jesus')) && exam === 'LE4';
       const isZainabLE4 = student.id === '8081836' && exam === 'LE4';
+      const isConnieLE3 = student.id === '7659964' && exam === 'LE3';
       const isTaft = student.id === '7687626';
 
       let finalSloId = slo.id;
@@ -911,6 +952,12 @@ export function generateInitialAssignments(): Assignment[] {
         finalHapsCode = 'AP-19-H-04-01';
         finalHapsNominal = 'Resting membrane potential across neuronal membranes';
         finalChapter = 'Chapter 10';
+      } else if (isConnieLE3) {
+        finalSloId = 'LE3-SLO-29';
+        finalSloText = 'Interpret a graph of tension vs. stimulus intensity and explain motor unit recruitment and the size principle.';
+        finalHapsCode = 'AP-19-G-06-04';
+        finalHapsNominal = 'Recruitment and tension vs stimulus intensity';
+        finalChapter = 'Chapter 9';
       } else if (isTaft) {
         if (exam === 'LE1') {
           finalSloId = 'LE1-SLO-21';
