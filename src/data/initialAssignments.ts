@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v80';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v80';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v80';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v81';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v81';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v81';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -295,6 +295,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/acc3ac92-9f99-4fb7-9987-b84f7218c5e3';
           notebookNotes = 'Name the types of epithelium (simple/stratified squamous, cuboidal, columnar, pseudostratified, transitional) and identify organs where each is found.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/2f9db039-6be5-47ed-af7c-1a700bb3323c';
+          notebookNotes = 'Explain the sequential steps involved in bone fracture repair (hematoma, fibrocartilaginous callus, bony callus, bone remodeling).';
         }
       } else if (student.id === '7959119') { // Davis, Dana Yvette (Section 1501)
         if (exam === 'LE2') {
@@ -407,6 +411,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/37f10c22-4edb-47df-8331-f06adce300fa';
           notebookNotes = 'Interpret a graph of tension vs. stimulus intensity and explain motor unit recruitment and the size principle.';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/0f1eba93-ea89-4dd7-9c21-6adf322bbeef';
+          notebookNotes = 'Differentiate between general (somatic and visceral) senses and special senses (vision, hearing, equilibrium, olfaction, gustation).';
         }
       } else if (student.id === '7922888') { // Cruz, Katherine (Section 1101)
         if (exam === 'LE1') {
@@ -839,6 +847,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/fee9be47-4035-4091-a65d-ac1afa2933d3';
           notebookNotes = 'Distinguish among first-, second-, and third-degree burns and describe the healing process for each.';
+        } else if (exam === 'LE3') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/5dc16868-f801-4db9-bf8a-33d48a807d7f';
+          notebookNotes = 'Describe the sequence of events involved in excitation-contraction coupling and the cross-bridge cycle of skeletal muscle contraction.';
         }
       } else if (student.id === '8036488') { // Richard, Alayzia (Section 1501)
         if (exam === 'LE1') {
