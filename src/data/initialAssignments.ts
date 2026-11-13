@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v81';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v81';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v81';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v82';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v82';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v82';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -675,7 +675,7 @@ export function generateInitialAssignments(): Assignment[] {
           notebookNotes = 'Describe the cellular processes of growth and keratinization in the epidermis.';
         } else if (exam === 'LE3') {
           status = 'submitted';
-          notebookUrl = 'https://notebook.google.com/notebook/0e346ce4-d2f7-43ef-8d6e-6b41ab4bf6c1?pli=1';
+          notebookUrl = 'https://notebook.google.com/notebook/0e346ce4-d2f7-43ef-8d6e-6b41ab4bf6c1';
           notebookNotes = 'Compare and contrast the structure, location, histology, and control of skeletal, cardiac, and smooth muscle tissue.';
         } else if (exam === 'LE4') {
           status = 'submitted';
