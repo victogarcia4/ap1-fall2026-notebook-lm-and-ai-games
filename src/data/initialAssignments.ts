@@ -2,9 +2,9 @@ import { Assignment, ExamCategory, Student, AIGameData } from '../types';
 import { INITIAL_STUDENTS } from './students';
 import { ALL_EXAM_SLOS } from './examSlos';
 
-export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v82';
-export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v82';
-export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v82';
+export const LOCAL_STORAGE_ASSIGNMENTS_KEY = 'ap1_notebooklm_assignments_v83';
+export const LOCAL_STORAGE_GAMES_KEY = 'ap1_aigame_submissions_v83';
+export const LOCAL_STORAGE_STUDENTS_KEY = 'ap1_students_list_v83';
 
 export function generateInitialAssignments(): Assignment[] {
   const assignments: Assignment[] = [];
@@ -919,6 +919,10 @@ export function generateInitialAssignments(): Assignment[] {
           status = 'submitted';
           notebookUrl = 'https://notebook.google.com/notebook/6ae6a0c9-6e12-467c-90b6-20f0508b159f';
           notebookNotes = 'Describe how the location and distribution of red and yellow bone marrow varies across a lifetime.';
+        } else if (exam === 'LE4') {
+          status = 'submitted';
+          notebookUrl = 'https://notebook.google.com/notebook/c542929b-052e-4693-a304-c1ed7c628fa8';
+          notebookNotes = 'Describe the structure and functions of myelin, the neurilemma, and nodes of Ranvier.';
         }
       } else if (student.id === '7057444') { // Curvey, Denae Jovan (Section 1201)
         if (exam === 'LE1') {
